@@ -18,5 +18,4 @@ while True:
         break
     except ValueError:
         print("Error.Estrato invalido")
-        #hola
-        
+
