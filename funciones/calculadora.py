@@ -34,24 +34,45 @@ def menu():
             print("Error. Opcion no valida.")
             input("Presione cualquier tecla para continuar")
 
+def leerNum(mensaje):
+    while True:
+        try:
+            num = float(input(mensaje))
+            return num
+        except ValueError:
+            print("Error. Número invalido")
+            input("Presione cualquier tecla para continuar...")
+
+
+
 ##PROGRAMA PRINCIPAL
-def leerNum():
-    pass
+
 while True:
     opcion = menu()
+    num1 = leerNum("INgrese el primer numero: ")
+    num2 = leerNum("INgrese el segundo numero: ")
     if opcion == 1:
-        num1 = leerNum("INgrese el primer numero")
-        num2 = leerNum("INgrese el segundo numero")
+        print("1.Sumar")
+        print(f"EL resultado de la suma es: {sumna(num1, num2):.3f}")
     elif opcion == 2:
-        pass
+        print("2.Resta")
+        print(f"EL resultado de la resta es: {resta(num1, num2):.3f}")
     elif opcion == 3:
-        pass
+        print("3.Multiplicar")
+        print(f"EL resultado de la multiplicacion es: {multiplicacion(num1, num2):.3f}")
     elif opcion == 4:
-        pass
+        print("4.Dividir")
+        res = division(num1, num2)
+        if res != None:
+            print(f"EL resultado de la division es: {res:.3f}")
+        else:
+            print("Division entre CERO inditerminada")
     elif opcion == 5:
         print("\n\nGracias por usar la calculadora")
         print("Adios")
         input()
+        break
+    input("Presione cualquier tecla para volver al MENU...")
 
 
 
