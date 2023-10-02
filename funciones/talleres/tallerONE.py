@@ -6,8 +6,12 @@ def calcFactorial(num):
     return factorial
 
 def readNum(smjNum):
-    numero = int(input(smjNum))
-    return numero
+    while True:
+        try:
+            numero = int(input(smjNum))
+            return numero
+        except ValueError:
+            print("Error. Digite un numero")
     
 ######################################################################
 def calcSalario(horasTrabajadas,valorHora):
@@ -65,8 +69,9 @@ def menu():
             print("Opcion no valida. Digite del 1 al 4")
             input("Presiones cualquier tecla para intentar de nuevo...")
 
-op = menu()
+
 while True:
+    op = menu()
     if op == 2:
         print("\n2. Calcular salario de un empleo")
         horas = cantHoras("Ingrese la cantidad de horas laboradas: ")
