@@ -8,7 +8,6 @@ def menu():
             print("4. Salir")
             print("=====================================")
             op = int(input("Opción [1-4]? >>>  "))
-            #hola fjndsf
             if op < 1 or op > 5:
                 print("     Opción no válida. Escoja de 1 a 4.")
                 continue
@@ -21,6 +20,9 @@ def ingNum(smj):
     while True:
         try:
             num = int(input(smj))
+            if num < 0:
+                print("     Error. Número negativo")
+                continue
             return num
         except ValueError:
             print("     Error. Número inválido")
@@ -49,12 +51,12 @@ def cutString(smj):
     cadena = input(smj)
     cadena = cadena.strip()
     for i in cadena:
-        if i.isalpha() == True:
+        if i.isdigit() == True:
             newCadena = newCadena + i
-    return newCadena.capitalize()
+    return newCadena
 
-def calFactura(sinDesc, descuento):
-    valor = (1 - descuento / 100) * sinDesc
+def calFactura(sinDesc, IVA):
+    valor = (1 + IVA / 100) * sinDesc
     return valor
 
 while True:
@@ -78,7 +80,7 @@ while True:
                 break
             except ValueError:
                 print("     Número invalido. Ingrese número correcto...")
-        porcentDescuento = ingNum("Ingrese porcentaje de descuento: ")
+        porcentDescuento = ingNum("Ingrese porcentaje del IVA: ")
         valFactura = calFactura(valorProduct , porcentDescuento)
-        print(f"    El valor del producto aplicando el descuento del {porcentDescuento}% es: ${valFactura:,.0f} COP")
+        print(f"    El valor del producto aplicando un IVA del {porcentDescuento}% es: ${valFactura:,.0f} COP")
         input("Press any key to continue...")
