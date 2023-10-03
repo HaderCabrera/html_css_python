@@ -8,6 +8,7 @@ def menu():
             print("4. Salir")
             print("=====================================")
             op = int(input("Opción [1-4]? >>>  "))
+            #hola fjndsf
             if op < 1 or op > 5:
                 print("     Opción no válida. Escoja de 1 a 4.")
                 continue
