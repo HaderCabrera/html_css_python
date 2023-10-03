@@ -18,4 +18,4 @@ for i in letras:
         contVocales[posicion] += 1
 # imprimir cantidad vocales
 for a in range(len(vocales)):
-    print(vocales[a], "==", contVocales[a])
+    print(f" {vocales[a]} == {contVocales[a]}")
