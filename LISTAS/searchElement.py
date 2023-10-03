@@ -15,3 +15,7 @@ def indezz(lista,elemento):
         if i == elemento:
             return True
     return False
+
+Nombres = ["Hader","Yobany","Cabrera","Guarin"]
+buscar = "Cabrera"
+print(f"El elemento {buscar} esta en la posicion: {indezz(Nombres,buscar)}")
