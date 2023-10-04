@@ -172,6 +172,8 @@ def nominaEmpleado(lstEmpleado):
         #print(f"El sueldo del empleado es :{nomina:,.0f} ")
         input()
 
+def listarNomina(lstEmpelado):
+    pass
 ## PROGRAMA PRINCIPAL
 lstEmpleado = []
 while True:
