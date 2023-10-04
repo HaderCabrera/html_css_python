@@ -205,4 +205,3 @@ while True:
     elif op == 8:
         print("\n\nGracias por usar el software. Adios")
         break
-print(lstEmpleado)
