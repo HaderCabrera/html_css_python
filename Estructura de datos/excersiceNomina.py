@@ -104,11 +104,11 @@ def deletEmpleado(lstEmpleado):
 def listarEmpleados(lstEmpleado):
     bandera1 = 0
     while True:
-        
         tamaña = len(lstEmpleado)
-        if tamaña < 5:
+        if tamaña <= 5:
             for m in range(tamaña):
                 print(lstEmpleado[m])
+            input()
             break
         elif tamaña > 5:
             for l in range(5):
@@ -117,6 +117,7 @@ def listarEmpleados(lstEmpleado):
                     bandera1 += 1
                 else:
                     print("NO HAY MAS EMPLEADO.")
+                    break
             bandera2 = input("Desea continuar? (S//N)")
             if  bandera2.lower() != "s":
                 break
@@ -144,6 +145,33 @@ def menu():
             print("Opción no válida. Escoja de 1 a 8.")
             input("Presione cualquier tecla para continuar...")
 
+def nominaEmpleado(lstEmpleado):
+    empleado = buscarEmpleado(lstEmpleado,leerIDEmpl)
+    saldoBruto = lstEmpleado[empleado][2] * lstEmpleado[empleado][3]
+    destEpsPension = saldoBruto * 0.08
+    if saldoBruto <= 1160000:
+        nomina = saldoBruto + 140000 - destEpsPension
+        
+        print("\n======================NOMINA===========================")
+        print(f"ID = {lstEmpleado[empleado][0]}     Empleado = {lstEmpleado[empleado][1]} ")
+        print("=========================================================")
+        print(f"Saldo Bruto:            ${saldoBruto:,.0f}COP")
+        print(f"Descuento S-P:              ${destEpsPension:,.0f}COP")
+        print(f"Auxilio de transporte:          $140,000COP")
+        print(f"Saldo neto:             ${nomina:,.0f}COP")
+        #print(f"El sueldo del empleado es :{nomina:,.0f} ")
+        input()
+    else:
+        nomina = saldoBruto - destEpsPension
+        print("\n======================NOMINA===========================")
+        print(f"ID = {lstEmpleado[empleado][0]}     Empleado = {lstEmpleado[empleado][1]} ")
+        print("=========================================================")
+        print(f"Saldo Bruto:            ${saldoBruto:,.0f}COP")
+        print(f"Descuento S-P:              ${destEpsPension:,.0f}COP")
+        print(f"Saldo neto:             ${nomina:,.0f}COP")
+        #print(f"El sueldo del empleado es :{nomina:,.0f} ")
+        input()
+
 ## PROGRAMA PRINCIPAL
 lstEmpleado = []
 while True:
@@ -169,7 +197,7 @@ while True:
     elif op == 5:
         listarEmpleados(lstEmpleado)
     elif op == 6:
-        pass
+        nominaEmpleado(lstEmpleado)
     elif op == 7:
         pass
     elif op == 8:
