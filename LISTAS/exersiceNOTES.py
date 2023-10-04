@@ -8,6 +8,7 @@ def readInt(text):
         try:
                 A = "A"
         except ValueError:
-             print("Error. Digite un numepo")
+             print("Error. Digite un numero")
+
              
         
