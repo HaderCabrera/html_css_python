@@ -145,8 +145,8 @@ def menu():
             print("Opción no válida. Escoja de 1 a 8.")
             input("Presione cualquier tecla para continuar...")
 
-def nominaEmpleado(lstEmpleado):
-    empleado = buscarEmpleado(lstEmpleado,leerIDEmpl)
+def nominaEmpleado(lstEmpleado,Id):
+    empleado = buscarEmpleado(lstEmpleado,Id)
     saldoBruto = lstEmpleado[empleado][2] * lstEmpleado[empleado][3]
     destEpsPension = saldoBruto * 0.08
     if saldoBruto <= 1160000:
@@ -171,9 +171,35 @@ def nominaEmpleado(lstEmpleado):
         print(f"Saldo neto:             ${nomina:,.0f}COP")
         #print(f"El sueldo del empleado es :{nomina:,.0f} ")
         input()
+#calcular nomina de empleado sin preguntar ID
+def calNomina():
+    AUXTRANS = 140000
+    for m in range(len(lstEmpleado)):
+        saldoBruto = lstEmpleado[m][3] * lstEmpleado[m][2]
+        descuento = saldoBruto * 0.08
+        if saldoBruto <= 1160000:
+            saldoNeto = saldoBruto - descuento + AUXTRANS
+            print("\n======================NOMINA===========================")
+            print(f"ID = {lstEmpleado[m][0]}     Empleado = {lstEmpleado[m][1]} ")
+            print("=========================================================")
+            print(f"Saldo Bruto:            ${saldoBruto:,.0f}COP")
+            print(f"Descuento S-P:          ${descuento:,.0f}COP")
+            print(f"Auxilio de transporte:  ${AUXTRANS:,.0f}COP")
+            print(f"Saldo neto:             ${saldoNeto:,.0f}COP")
+            input()
+        else:
+            saldoNeto = saldoBruto - descuento
+            print("\n======================NOMINA===========================")
+            print(f"ID = {lstEmpleado[m][0]}     Empleado = {lstEmpleado[m][1]} ")
+            print("=========================================================")
+            print(f"Saldo Bruto:            ${saldoBruto:,.0f}COP")
+            print(f"Descuento S-P:          ${descuento:,.0f}COP")
+            print(f"Saldo neto:             ${saldoNeto:,.0f}COP")
+            input()
 
 def listarNomina(lstEmpelado):
     pass
+    
 ## PROGRAMA PRINCIPAL
 lstEmpleado = []
 while True:
@@ -199,9 +225,9 @@ while True:
     elif op == 5:
         listarEmpleados(lstEmpleado)
     elif op == 6:
-        nominaEmpleado(lstEmpleado)
+        nominaEmpleado(lstEmpleado,leerIDEmpl())
     elif op == 7:
-        pass
+        calNomina()
     elif op == 8:
         print("\n\nGracias por usar el software. Adios")
         break
