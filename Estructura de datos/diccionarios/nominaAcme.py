@@ -9,7 +9,7 @@ def menu():
             print("3. Buscar emplado")
             print("4. Eliminar empleado")
             print("5. Listar empleados")
-            print("6. Listar nómina de un empleado")
+            print("6. Nómina de un empleado")
             print("7. Listar nómina de todos los empleados")
             print("8. Salir")
             op = int(input(">>> Opción (1-8)? "))
