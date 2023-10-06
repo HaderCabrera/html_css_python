@@ -28,7 +28,6 @@ def agregarEmpleado():
     dicEmpleado["horasTrabajadas"] = int(input("Ingrese cuantas horas trabajo [1h -> 160h]: "))
     dicEmpleado["valorHora"] = float(input("Digite el valor de la hora [8k -> 150k]: "))
     dicEmpresa[id] = dicEmpleado
-
 def modificarEmpleado():
     empleado = int(input("Digite el ID [CC] del empleado que desea modificar: "))
     print("====QUE DESEA MODIFICAR?==== ")
@@ -52,15 +51,16 @@ def eliminarEmpleado():
             empleado = int(input("Ingrese el ID del empleado que quiere dar de baja? "))
             del dicEmpresa[empleado]
             print(f"Elimine al usuario {empleado} de la base de datos.")
+            input()
             break
         except KeyError:
-            print("El usuario no existe LOCO...")
+            print("El empleado ya no esta aca...")
 def listarEmpleados():
     bandera = 0
     while True:
         if len(dicEmpresa) <= 5:
             for empleado, listEmpresa in dicEmpresa.items():
-                print(f"========__*{empleado}__*========")
+                print(f"========__*{empleado}*__========")
                 print(f'Nombre = {listEmpresa["Nombre"]}')
                 print(f'Horas trabajadas = {listEmpresa["horasTrabajadas"]}')
                 print(f'Valor hora = {listEmpresa["valorHora"]:,.0f} COP')
@@ -70,7 +70,7 @@ def listarEmpleados():
         elif len(dicEmpresa) > 5:
             for empleado, listEmpresa in dicEmpresa.items():
                 if bandera < len(dicEmpresa):
-                    print(f"========__*{empleado}__*========")
+                    print(f"========__*{empleado}*__========")
                     print(f'Nombre = {listEmpresa["Nombre"]}')
                     print(f'Horas trabajadas = {listEmpresa["horasTrabajadas"]}')
                     print(f'Valor hora = {listEmpresa["valorHora"]:,.0f} COP')
@@ -82,14 +82,37 @@ def listarEmpleados():
                         continue
                 else:
                     break
+            input()
             break
-        
 def nominaEmpleado():
+    empleado = int(input("Ingrese el ID(CC) del empleado: "))
+    MINIMO = 1160000
+    AUXTRANS = 140000
+    salarioBruto = dicEmpresa[empleado]["horasTrabajadas"] * dicEmpresa[empleado]["valorHora"]
+    descuentos = salarioBruto * 0.08
+    if salarioBruto <= 1160000:
+        salarioNeto = salarioBruto + AUXTRANS - descuentos
+        print("\n======================NOMINA===========================")
+        print(f'        ID = {empleado}     Empleado = {dicEmpresa[empleado]["Nombre"]}')
+        print("=========================================================")
+        print(f"Saldo Bruto:                ${salarioBruto:,.0f}COP")
+        print(f"Descuento S-P:              ${descuentos:,.0f}COP")
+        print(f"Auxilio de transporte:      ${AUXTRANS:,.0f} COP")
+        print(f"Saldo neto:                 ${salarioNeto:,.0f}COP")
+        input()
+    else:
+        salarioNeto = salarioBruto - descuentos
+        print("\n======================NOMINA===========================")
+        print(f'        ID = {empleado}     Empleado = {dicEmpresa[empleado]["Nombre"]}')
+        print("=========================================================")
+        print(f"Saldo Bruto:            ${salarioBruto:,.0f}COP")
+        print(f"Descuento S-P:          ${descuentos:,.0f}COP")
+        print(f"Saldo neto:             ${salarioNeto:,.0f}COP")
+        input()
+def calcularNomina():
     pass
-
-                
-
-
+def listarNomina():
+    pass
 
 while True:
     opcion = menu()
@@ -111,7 +134,7 @@ while True:
     elif opcion == 5:
         listarEmpleados()
     elif opcion == 6:
-        listarEmpleados()
+        nominaEmpleado()
     elif opcion == 8:
         break
 
