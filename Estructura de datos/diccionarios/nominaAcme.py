@@ -46,6 +46,44 @@ def buscarEmpleado():
     empleado = int(input("Ingrese el ID(CC) del usuario que quiere buscar >>> "))
  #   for a,b in dicEmpresa.items():
     return empleado, dicEmpresa.get(empleado)
+def eliminarEmpleado():
+    while True:
+        try:
+            empleado = int(input("Ingrese el ID del empleado que quiere dar de baja? "))
+            del dicEmpresa[empleado]
+            print(f"Elimine al usuario {empleado} de la base de datos.")
+            break
+        except KeyError:
+            print("El usuario no existe LOCO...")
+def listarEmpleados():
+    bandera = 0
+    while True:
+        if len(dicEmpresa) <= 5:
+            for empleado, listEmpresa in dicEmpresa.items():
+                print(f"========__*{empleado}__*========")
+                print(f'Nombre = {listEmpresa["Nombre"]}')
+                print(f'Horas trabajadas = {listEmpresa["horasTrabajadas"]}')
+                print(f'Valor hora = {listEmpresa["valorHora"]:,.0f} COP')
+                print("="*40) 
+            input()   
+            break
+        elif len(dicEmpresa) > 5:
+            for empleado, listEmpresa in dicEmpresa.items():
+                if bandera < len(dicEmpresa):
+                    print(f"========__*{empleado}__*========")
+                    print(f'Nombre = {listEmpresa["Nombre"]}')
+                    print(f'Horas trabajadas = {listEmpresa["horasTrabajadas"]}')
+                    print(f'Valor hora = {listEmpresa["valorHora"]:,.0f} COP')
+                    print("="*40) 
+                    bandera += 1
+                    if bandera == 5:
+                        input("Digite cualquier tecla para continuar >>> ")
+                        continue
+                else:
+                    break
+            break
+
+                
 
 
 
@@ -64,6 +102,11 @@ while True:
         print(f'Horas trabajadas = {datos["horasTrabajadas"]}')
         print(f'Valor hora = {datos["valorHora"]:,.0f} COP')
         input()
+    elif opcion == 4:
+        eliminarEmpleado()
+    elif opcion == 5:
+        listarEmpleados()
+
     elif opcion == 8:
         break
 
