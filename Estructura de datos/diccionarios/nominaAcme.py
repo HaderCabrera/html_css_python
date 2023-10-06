@@ -135,6 +135,8 @@ while True:
         listarEmpleados()
     elif opcion == 6:
         nominaEmpleado()
+    elif opcion == 7:
+        pass
     elif opcion == 8:
         break
 
