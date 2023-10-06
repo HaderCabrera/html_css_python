@@ -1,27 +1,4 @@
 dicEmpresa = {}
-
-def agregarEmpleado():
-    dicEmpleado = {}
-    id = int(input("Digite el ID del empelado (cedula): "))
-    dicEmpleado["Nombre"] = input("Ingrese el nombre del empleado: ")
-    dicEmpleado["horasTrabajadas"] = int(input("Ingrese cuantas horas trabajo [1h -> 160h]: "))
-    dicEmpleado["valorHora"] = float(input("Digite el valor de la hora [8k -> 150k]: "))
-    dicEmpresa[id] = dicEmpleado
-
-def modificarEmpleado():
-    empleado = int(input("Digite el ID [CC] del empleado que desea modificar: "))
-    print("====QUE DESEA MODIFICAR?==== ")
-    print("     1. Nombre")
-    print("     2. horasTrabajadas")
-    print("     3. valorHora")
-    op = int(input("Digite la opcion que desea modificar: "))
-    if op == 1:
-        dicEmpresa[empleado]["Nombre"] = input("    Ingrese el nuevo nombre >>> ")
-    if op == 2:
-        dicEmpresa[empleado]["horasTrabajadas"] = input("   Ingrese la nueva cantidad de horas >>> ")
-    if op == 3:
-        dicEmpresa[empleado]["valorHora"] = input("   Ingrese el nuevo valor de la hora >>> ")
-
 def menu():
     while True:
         try:
@@ -44,6 +21,33 @@ def menu():
         except ValueError:
             print("Opción no válida. Escoja de 1 a 8.")
             input("Presione cualquier tecla para continuar...")
+def agregarEmpleado():
+    dicEmpleado = {}
+    id = int(input("Digite el ID del empelado (cedula): "))
+    dicEmpleado["Nombre"] = input("Ingrese el nombre del empleado: ")
+    dicEmpleado["horasTrabajadas"] = int(input("Ingrese cuantas horas trabajo [1h -> 160h]: "))
+    dicEmpleado["valorHora"] = float(input("Digite el valor de la hora [8k -> 150k]: "))
+    dicEmpresa[id] = dicEmpleado
+
+def modificarEmpleado():
+    empleado = int(input("Digite el ID [CC] del empleado que desea modificar: "))
+    print("====QUE DESEA MODIFICAR?==== ")
+    print("     1. Nombre")
+    print("     2. horasTrabajadas")
+    print("     3. valorHora")
+    op = int(input("Digite la opcion que desea modificar: "))
+    if op == 1:
+        dicEmpresa[empleado]["Nombre"] = input("    Ingrese el nuevo nombre >>> ")
+    if op == 2:
+        dicEmpresa[empleado]["horasTrabajadas"] = input("   Ingrese la nueva cantidad de horas >>> ")
+    if op == 3:
+        dicEmpresa[empleado]["valorHora"] = float(input("   Ingrese el nuevo valor de la hora >>> "))
+def buscarEmpleado():
+    empleado = int(input("Ingrese el ID(CC) del usuario que quiere buscar >>> "))
+ #   for a,b in dicEmpresa.items():
+    return empleado, dicEmpresa.get(empleado)
+
+
 
 while True:
     opcion = menu()
@@ -53,6 +57,15 @@ while True:
     elif opcion == 2:
         modificarEmpleado()
         print(dicEmpresa)
+    elif opcion == 3:
+        id,datos = buscarEmpleado()
+        print(f"\n=====*__{id}__*=====")
+        print(f'Nombre = {datos["Nombre"]}')
+        print(f'Horas trabajadas = {datos["horasTrabajadas"]}')
+        print(f'Valor hora = {datos["valorHora"]:,.0f} COP')
+        input()
+    elif opcion == 8:
+        break
 
 
 
