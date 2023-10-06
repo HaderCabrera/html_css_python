@@ -78,10 +78,14 @@ def listarEmpleados():
                     bandera += 1
                     if bandera == 5:
                         input("Digite cualquier tecla para continuar >>> ")
+                        bandera = 0
                         continue
                 else:
                     break
             break
+        
+def nominaEmpleado():
+    pass
 
                 
 
@@ -106,7 +110,8 @@ while True:
         eliminarEmpleado()
     elif opcion == 5:
         listarEmpleados()
-
+    elif opcion == 6:
+        listarEmpleados()
     elif opcion == 8:
         break
 
