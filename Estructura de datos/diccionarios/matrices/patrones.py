@@ -68,7 +68,7 @@ while True:
     elif op == 8:
         pass
     elif op == 9:
-                filas = int(input("Ingrese numero de filas:  "))
+        filas = int(input("Ingrese numero de filas:  "))
         matrix = crearMatrix(filas,filas)
     elif op == 10:
        break
