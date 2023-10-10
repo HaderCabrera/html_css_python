@@ -56,9 +56,25 @@ while True:
         imprimirMatrix(matrix)
         input()
     elif op == 3:
-        pass
+        for f in range(len(matrix)):
+            for c in range(len(matrix)):
+                if f == c:
+                    matrix[f][c] = 1
+                else:
+                    matrix[f][c] = 0
+        imprimirMatrix(matrix)
+        input()
     elif op == 4:
-        pass
+        bandera = 0
+        for f in range(len(matrix)):
+            for c in range(len(matrix[f])):
+                if c == (len(matrix) - 1) - bandera:
+                    matrix[f][c] = 1
+                    bandera += 1
+                else:
+                   matrix[f][c] = 0
+        imprimirMatrix(matrix)
+        input()
     elif op == 5:
         pass
     elif op == 6:
