@@ -49,7 +49,7 @@ while True:
     nombre = leerNombre("\nIngrese el nombre del PLAYER:   ")
     jugar(nombre)
     print(listJugadores)
-    a = input("DESEA SEGUIR JUGANDO? ")
+    a = input("DESEA SEGUIR JUGANDOO? ")
     if a == "S" or a == "s":
         continue
     else:
