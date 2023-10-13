@@ -1,5 +1,5 @@
 #CUENTA CORREOS DESTINATARIO EN EÑL TEXTO EN EL TEXTO
-fd = open("hader_cabrera/archivos/mbox-short.txt","r")
+fd = open("archivos/mbox-short.txt","r")
 
 def miFun(email):
     return len(email)
@@ -25,7 +25,7 @@ cl = len(setEmail)
 """for email in setEmail:
     print(email)"""
 #imprimir correos en orden
-"""for email in sorted(setEmail):
+"""for email in sorted(setEmaissssl):
     print(email)"""
 #imprimir por tamaño de correo
 for email in sorted(setEmail, reverse= False, key=miFun):
