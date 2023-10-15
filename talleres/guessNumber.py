@@ -80,7 +80,12 @@ while True:
                 print("     HAS ACERTADO, CONGRATULATION!!!\n")
                 print("_"*15,"TOP 10","_"*15)
                 for i in range(0,len(top)):
-                    print(f'Player: {top[i][0]}       Intentos: {top[i][1]["intento"]}')
+                    if player == top[i][0]:
+                        print("="*40)
+                        print(f'Player: {top[i][0]}       Intentos: {top[i][1]["intento"]}')
+                        print("="*40)
+                    else:
+                        print(f'Player: {top[i][0]}       Intentos: {top[i][1]["intento"]}')
                 print("_"*40)
 
                 againTurno = input(">>> Desea intentar de nuevo? (S/N) ")
