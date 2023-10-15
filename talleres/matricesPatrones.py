@@ -31,7 +31,7 @@ def menu(smj):
   print("_"*40)
   op = int(input(smj))
   return op
-  
+
 filas = int(input(">>> Ingrese numero de filas: "))
 matrix = crearMatrix(filas,filas)
 
