@@ -6,7 +6,6 @@ for linea in fd:
     #print(linea, end="") # barre el documento linea por linea
     fd2.write(linea)
 
-
 fd2.close()
 fd.close()
 
