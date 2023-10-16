@@ -7,7 +7,7 @@ def agregarNombre(msj):
             if player == "" or player.isalnum() == False:
                 print("Nombre incorrecto. Digite números y letras.")
                 continue
-            archivoJugadores = open("talleres\\topTenn.txt","r")
+            archivoJugadores = open("hader_cabrera\\talleres\\topTenn.txt","r")
             for line in archivoJugadores:
                 linea = line.strip()
                 if linea.split(",")[0] == player:
@@ -61,7 +61,7 @@ def metodoBurbuja(jugadores):
 #LEE LOS JUGADORES GANADORES ALMACENADOS EN DISCO
 def leerGanadores():
     jugadores = []
-    fd = open("talleres\\topTenn.txt","r")
+    fd = open("hader_cabrera\\talleres\\topTenn.txt","r")
     for line in fd:
         lineas = line.strip()
         jugadores.append(lineas.split(","))  
@@ -103,7 +103,7 @@ while True:
                         continue
                     else:
                         print("Gracias por jugar, vuelve pronto!")
-                        fd = open("talleres\\topTenn.txt","a")
+                        fd = open("hader_cabrera\\talleres\\topTenn.txt","a")
                         fd.write(player + "," + str(12 - intento) + "\n")
                         fd.close()
                         topp = leerGanadores()
