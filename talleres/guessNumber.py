@@ -1,5 +1,6 @@
 import random
 jugadores = {}
+
 def agregarNombre(msj):
     while True:
         try:
