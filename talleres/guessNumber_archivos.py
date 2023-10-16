@@ -1,5 +1,5 @@
 import random
-
+#SI EL NOMBRE YA ESTA EN DISCO, NO LO DEJA JUGAR
 def agregarNombre(msj):
     while True:
         try:
@@ -27,12 +27,12 @@ def agregarNumero(msj):
                 return intento
             except  ValueError:
                 print("Error. Digite un numero correcto.")
-
+#SI ADIVINA DEVUELVE DOS VARIABLES, BANDERA Y EL INTENTO EN QUE LO LOGRO
+#SI NO LO LOGRA EN LOS 10 INTENTOS DEVUELVE UN FALSE EN BANDERA
 def adivinarNumero(nombre):
     adivinar = random.randint(1, 1000)
     print(adivinar)
     bandera = 0
-    jugadore = {}
     for i in range(11,1,-1):
         print(f"____Tienes {i-1} intentos____")
         intento = agregarNumero("Guess the number: ")
@@ -44,7 +44,7 @@ def adivinarNumero(nombre):
             return True, i
         bandera += 1
     return False, bandera      
-#HAY QUE MODIFICAR BURBUHA, QUE SOLO DEVUELVA 10 PRIMEROS ITEMS
+#ORDENA LISTA DE JUGADORES GANADORES Y LOS LIMITA A 10
 def metodoBurbuja(jugadores):
 
     players = len(jugadores)
@@ -58,7 +58,7 @@ def metodoBurbuja(jugadores):
         return jugadores
     else:
         return jugadores[0:10]
-
+#LEE LOS JUGADORES GANADORES ALMACENADOS EN DISCO
 def leerGanadores():
     jugadores = []
     fd = open("talleres\\topTenn.txt","r")
@@ -102,6 +102,7 @@ while True:
                     if againTurno == "S" or againTurno == "s":
                         continue
                     else:
+                        print("Gracias por jugar, vuelve pronto!")
                         fd = open("talleres\\topTenn.txt","a")
                         fd.write(player + "," + str(12 - intento) + "\n")
                         fd.close()
@@ -116,6 +117,7 @@ while True:
                             else:
                                 print(f'Player: {top[i][0]}       Intentos: {top[i][1]}')
                         print("_"*40)
+                        input()
                         break
                 if cond == False:
                     tryAgain = input(">>> YOU LOSS. TRY AGAIN? (S/N) ")
@@ -128,7 +130,21 @@ while True:
     elif opcion == 2:
         print("GRACIAS POR JUGAR, VUELVA PRONTO!")
         break
+    
     elif opcion == 3:
-        fd = open("talleres\\topTenn.txt","w")
-        fd.write("")
-        fd.close()
+        bandera = 0
+        while True:
+            contraseña = input(" >>Digite la contraseña de admin: ")
+            if contraseña == "admin":
+                fd = open("talleres\\topTenn.txt","w")
+                fd.write("")
+                fd.close()
+            else:
+                print(" Contraseña incorrecta. Try again.")
+                bandera += 1
+                if bandera >= 3:
+                    print("Número de veces maximo. Vuelva luego.".center(35))
+                    break
+                continue
+            
+            break
