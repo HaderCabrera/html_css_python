@@ -179,7 +179,9 @@ def jugar():
                         tiros += 1
                         dicJugadores[i]["tiros"] += 1                        
                         if validarGanador(matJuego) == True:
-                            dicJugadores[i]["nombre"] = i   
+                            dicJugadores[i]["nombre"] = i
+                            print(f"Ha ganado {i}!!! ") 
+                            input() 
                             return dicJugadores[i]
                         else:
                             break 
