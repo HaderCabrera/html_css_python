@@ -134,28 +134,27 @@ def validarGanador(matJuego):
 def jugar():
     player1 = ingresarJugador("Ingrese el nickname del jugador 1: ")
     player2 = ingresarJugador("Ingrese el nickname del jugador 2: ")
-    bandera = []
+    ficha = []
     jugadores = []
-    ficha = input(f"Indique con que ficha quiere jugar {player1} -> X-O: ")
-    if ficha == "X" or ficha == "x":
-        bandera.append("x")
-        bandera.append("O")
+    fichaInicio = input(f"Indique con que ficha quiere jugar {player1} -> X-O: ")
+    if fichaInicio == "X" or fichaInicio == "x":
         jugadores.append(player1)
         jugadores.append(player2)
-    elif ficha == "O" or ficha == "o":
-        bandera.append("X")
-        bandera.append("O")
+    elif fichaInicio == "O" or fichaInicio == "o":
         jugadores.append(player2)
         jugadores.append(player1)
-
+    ficha.append("x")
+    ficha.append("O")
     input(">>>Presione cualquier tecla para iniciar")
-    banderaa = 0
+
+    bandera = 0
     for e in range(3):
         print("+-----+-----+-----+")
-        print(f"|  {e+1+banderaa}  |  {e+2+banderaa}  |  {e+3+banderaa}  |")
+        print(f"|  {e+1+bandera}  |  {e+2+bandera}  |  {e+3+bandera}  |")
         print(f"|     |     |     |")
-        banderaa += 2 
+        bandera += 2 
     print("+-----+-----+-----+")
+
     dicJugadores = {player1:{"tiros": 0, "tiempo": 0},player2:{"tiros": 0, "tiempo": 0}}
     dicGanador = {}
     matJuego = crearMatrix()
@@ -172,10 +171,10 @@ def jugar():
                         finalTIme = time.time()
                         tiempoEjecucion = finalTIme - inicioTime
                         dicJugadores[i]["tiempo"] = tiempoEjecucion 
-                        if llenarMatrix(matJuego,casilla,bandera[orden]) == False:
+                        if llenarMatrix(matJuego,casilla,ficha[orden]) == False:
                             continue
                         imprimirJuego(matJuego)
-                        orden += 1
+                        orden = 1
                         tiros += 1
                         dicJugadores[i]["tiros"] += 1                        
                         if validarGanador(matJuego) == True:
@@ -204,7 +203,7 @@ def metodoBurbuja(datosDisco):
 
     return(datosDisco)
 
-def cargarGanador(ganadores):
+def cargarGanadores(ganadores):
     
     ruta = "hader_cabrera\\talleres\\ganadores_json.json"
     try:
@@ -257,33 +256,32 @@ def getGanadores():
     return discGanadores
 
 def listarGanadores(ganadores):
-    print("="*40)
+    print("="*50)
     for i in range(len(ganadores)):
-        print(f'Nombre: {ganadores[i]["nombre"]}  Tiros: {ganadores[i]["tiros"]}  Tiempo: {ganadores[i]["tiempo"]:.3f} ')
-        print("-"*40)    
-    print("="*40)
+        print(f'Player: {ganadores[i]["nombre"]}  Tiros: {ganadores[i]["tiros"]}  Tiempo: {ganadores[i]["tiempo"]:.3f} seg')
+        print("-"*50)    
+    print("="*50)
     input()
 
 #PROGRAMA PRINCIPAL
 datosDisco = []
-datosDisco = []
+primerGanador = []
 while True:
     opc = menu()
     if opc == 1:
-        a = jugar()
-        if a == False:
+        ganador = jugar()
+        if ganador == False:
             print("EMPATE")
             input()
         else:
             datosDisco = getGanadores()
             if datosDisco == False:
-                primerGanador = []
-                primerGanador.append(a)
-                cargarGanador(primerGanador)
+                primerGanador.append(ganador)
+                cargarGanadores(primerGanador)
             else:
-                datosDisco.append(a)
+                datosDisco.append(ganador)
                 metodoBurbuja(datosDisco)
-                cargarGanador(datosDisco)
+                cargarGanadores(datosDisco)
     elif opc == 2:
         datosDisco = getGanadores()
         if datosDisco == False:
