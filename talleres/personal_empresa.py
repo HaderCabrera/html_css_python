@@ -1,4 +1,18 @@
-#NO ESTA COMPLETO.
+#Escribir un programa que permita la creación 
+# e introducción de los datos del personal de 
+# la empresa (Id, Nombre, Edad, Sexo y 
+# Teléfono) y almacene la información de 
+# forma persistente. No se pueden almacenar 
+# la información de una persona varias veces, 
+# deben haber registros únicos por persona.
+#
+# Estructura de datos elegida:
+# Lista de diccionarios
+# [ {id1: {nombre:"", edad: , sexo: , Telefono},
+#   {id2: {nombre:"", edad: , sexo: , Telefono},
+#   {idn: {nombre:"", edad: , sexo: , Telefono}
+# }]
+
 
 import json
 
@@ -32,17 +46,17 @@ def guardarEmpleado(lstPersonal, ruta):
     
     return True
 
-def existeId(cod, lstLibreria):
+def existeId(id, lstPersonal):
     #funcion que encuentra la posición de un id en la lista
     # Devuelve un número enterior >= 0 si el id existe
     # Devuelve un -1 si el id NO existe
-    for i, datos in enumerate(lstLibreria):
+    for i, datos in enumerate(lstPersonal):
         # El método enumerate () agrega un contador a un iterable y 
         # lo devuelve en forma de objeto de enumeración. 
         # Este objeto enumerado puede usarse directamente para bucles 
         # o convertirse en una lista de tuplas usando la función list().
         k = int(list(datos.keys())[0])
-        if k == cod:
+        if k == id:
             return i
     return -1
 
@@ -72,82 +86,41 @@ def borrarPersonal(lstPersonal, rutaFile):
         return None
     
     
-def insertarLibro(lstLibreria, rutaFile):
+def agregarPersonal(lstPersonal, ruta):
     print("\n\n1. Agregar Personal")
     
-    cod = int(input("Ingrese codigo del libro: "))
-    while existeId(cod, lstLibreria) != -1:
+    id = int(input("Ingrese el ID: "))
+    while existeId(id, lstPersonal) != -1:
         # si existeId es -1 entonces no existe ese id en lstPersonal
         # si es diferente a -1, entonces el id y existe.
-        print("--> Ya existe un libro con ese CODIGO")
+        print("--> Ya existe un empleado con ese ID")
         input("Presione cualquier tecla para continuar\n")
-        cod = int(input("\nIngrese el CODIGO: "))
+        id = int(input("\nIngrese el ID: "))
         
-    titulo = input("Titulo: ")
-    autor = input("AUtor: ")
-    precio = float(input("Precio: "))
- 
+    nombre = input("Nombre: ")
+    edad = int(input("Edad: "))
+    sexo = input("Sexo (M/F): ")
+    telefono = input("Teléfono: ")
     
-    dicLibro = {}
-    dicLibro[cod] = {"titulo":titulo, "autor":autor, "precio":precio}
-    lstLibreria.append(dicLibro)
-
-    ##################################################################################
-    try:
-        fd = open(rutaFile, "r")
-        print("ENTRE AC1")
-        json.dump(dicLibro,fd)
-        input()
-    except Exception as e:
-        try:
-            fd = open(rutaFile, "w")
-            print("ENTRE ACA2")
-            input()
-        except Exception as d:
-            print("Error al intentar abrir el archivo\n", d)
-            input("Presione cualquier tecla para continuar\n")
-            return None
-    try:
-        linea = fd.readline()
-        if linea.strip() != "":
-            fd.seek(0)
-            input()
-            json.dump(dicLibro,fd)
-
-    except Exception as e:
-        print("Error al cargar la información\n", e)
-        input("Presione cualquier tecla para continuar\n")
-        return None
+    dicEmpleado = {}
+    dicEmpleado[id] = {"nombre":nombre, "edad":edad, "sexo":sexo, "telefono":telefono}
+    lstPersonal.append(dicEmpleado)
     
-    # print(lstPersonal)
-    try:
-        if not fd.closed:
-            fd.close()
-    except Exception as e:
-        print("Error al cerrar el archivo.\n", e, "\n")
-        input("Presione cualquier tecla para continuar\n")
-        return None
-    return lstLibreria
-
-    input()
-
-    ###################################################################################
-    #PARA AGREGAR LA LISTA DE LIBROS NUEVA A DISCO
-    if guardarEmpleado(lstLibreria, ruta) == True:
-        input("El libro ha sido registrado con éxito.\nPresione cualquier tecla para continuar...")
+    if guardarEmpleado(lstPersonal, ruta) == True:
+        input("El empleado ha sido registrado con éxito.\nPresione cualquier tecla para continuar...")
     else:
-        input("Ocurrio algún error al guardar el libro.")
+        input("Ocurrio algún error al guardar el empleado.")
 
 def menu():
     while True:
         try:
             print("\n" * 30)
-            print("*** LIBRERIA ***".center(40))
+            print("*** REGISTRO DEL PERSONAL ***".center(40))
             print("MENU".center(40))
-            print("1. Insertar")
-            print("2. Consultar")
-            print("3. Editar")
-            print("4. Borrar")
+            print("1. Agregar")
+            print("2. Modificar")
+            print("3. Eliminar")
+            print("4. Ver")
             print("5. Salir")
             op = int(input(">>> Opción (1-5)? "))
             if op < 1 or op > 5:
@@ -192,18 +165,18 @@ def cargarInfo(lstPersonal, ruta):
     return lstPersonal
     
 # *** PROGRAMA PRINCIPAL ***
-rutaFile = "hader_cabrera/talleres/datpersonal.json"
-lstLibreria = []
-lstLibreria =cargarInfo(lstLibreria, rutaFile)
+rutaFile = "hader_cabrera\\talleres\\datpersonal.json"
+lstPersonal = []
+lstPersonal =cargarInfo(lstPersonal, rutaFile)
 while True:
     op = menu()
     if op == 1:
-        insertarLibro(lstLibreria, rutaFile)
+        agregarPersonal(lstPersonal, rutaFile)
     elif op == 2:
         # Modificar
         pass
     elif op == 3:
-        borrarPersonal(lstLibreria, rutaFile)
+        borrarPersonal(lstPersonal, rutaFile)
     elif op == 4:
         # Ver
         pass
