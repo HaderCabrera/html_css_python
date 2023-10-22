@@ -143,8 +143,8 @@ def jugar():
         jugadores.append(player1)
         jugadores.append(player2)
     elif ficha == "O" or ficha == "o":
-        bandera.append("O")
         bandera.append("X")
+        bandera.append("O")
         jugadores.append(player2)
         jugadores.append(player1)
 
