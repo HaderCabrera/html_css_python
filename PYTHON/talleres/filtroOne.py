@@ -6,7 +6,7 @@ import json
 ###CAMBIAR RUTA DE FICHERO CVS
 def tomarDatosPais(rutaJeison):
 
-    ruta = "/home/spukN01-018/Documents/repositorioHader/hader_cabrera/talleres/datosPais.txt"
+    ruta = "talleres/datosPais.txt"
     fd = open(ruta, "r")
     lstObservatorios = []
     dicObservatorio = {}
@@ -199,7 +199,7 @@ def menu():
             print("Error. Digite un numero correcto.")
 
 #PROGRAMA PRINCIPAL
-rutaJeison = "/home/spukN01-018/Documents/repositorioHader/hader_cabrera/talleres/observatoriosJson.json"
+rutaJeison = "talleres/observatoriosJson.json"
 
 while True:
 
