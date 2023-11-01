@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio inputs</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Indique sus preferencias</legend>
+            <label for="start">Elija una fecha:</label>
+            <input type="date" id="start" name="trip-start"  placeholder="dd/mm/aaaa"/>
+            <br><br>
+            <label for="start">Elija un fichero:</label>
+            <input type="file" id="fname" name="fname" accept=".jpg, .png, .gif"/>
+            <br><br>
+            <input type="radio" name="procesadores" id="AMD" value="AMD"/>
+            <label for="procesadores">AMD</label>
+            <input type="radio" name="procesadores" id="intel5" value="intel5"/>
+            <label for="procesadores">Intel 5</label>
+            <input type="radio" name="procesadores" id="intel7" value="intel7"/>
+            <label for="procesadores">Intel 7</label>
+        </fieldset>
+        <fieldset>
+            <legend>Indique sus preferencias</legend>
+            <input type="radio" name="materias" id="matematicas" value="matematicas"/>
+            <label for="materias">Matematicás</label>
+            <input type="radio" name="materias" id="historia" value="historia"/>
+            <label for="materias">Historia</label>
+            <input type="radio" name="materias" id="geografia" value="geografia"/>
+            <label for="materias">geografia</label>
+            <input type="radio" name="materias" id="lengua" value="lengua"/>
+            <label for="materias">Lengua</label>
+            <br><br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"/><br>
+            <label for="apellido">Apellidos:</label>
+            <input type="text" name="apellido" id="apellido"/><br>
+            <label for="direccion">Dirección:</label>
+            <input type="text" name="direccion" id="direccion"/>
+            <br><br>
+            <label for="color">Elija un color:</label>
+            <input type="color" name="color" id="color"/>
+
+            <label for="comentarios"></label>
+            <br><br>
+            <textarea name="comentarios" id="comentarios" cols="46" rows="8" placeholder="Utilice este espacio para escribir."></textarea>
+            <br><br>
+            <label for="fecha">Elija una fecha:</label>
+            <input type="date" name="fecha" id="fecha" />
+        </fieldset>     
+    </form>
+    
+
+
+    
+</body>
+</html>
