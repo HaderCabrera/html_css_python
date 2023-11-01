@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos input</title>
+</head>
+<body>
+    <h1>Atributos input</h1>
+    <hr>
+    <br>
+    <form action="">
+        <label for="fnombre">Nombres:</label>
+        <input type="text" name="fnombre" id="fnombre" maxlength="8" minlength="1" placeholder="Ingrese su primer nombre" size="10" list="nombres" value="Hader Cabrera" pattern="[0-9]{1,15}">
+        <!--
+        <datalist id="nombres">
+            <option value="Hader Cabrera"></option>
+            <option value="Juan Ramirez"></option>
+            <option value="Pepito Perez"></option>
+            <option value="Camilo Ramirez"></option>
+        </datalist>
+        -->
+        <br><br>
+        <label for="pass">Contraseña</label>
+        <input type="password" name="pass" id="pass">
+        <br><br>
+        Lenguajes de programación:
+        <br>
+        <label for="lengprog">Ada</label>
+        <input type="radio" name="lengprog" id="Ada">
+        <br>
+        <label for="lengprog">Python</label>
+        <input type="radio" name="lengprog" id="Python">
+        <br>
+        <label for="lengprog">Java</label>
+        <input type="radio" name="lengprog" id="Java">
+        <br>
+        <label for="lengprog">JavaScrip</label>
+        <input type="radio" name="lengprog" id="JavaScrip">
+        <br><br>
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="LIMPIARE">
+
+    </form>
+    
+</body>
+</html>
