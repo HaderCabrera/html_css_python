@@ -1,0 +1,52 @@
+h1{
+    color: cadetblue;
+}
+p  strong{
+    color:red ;
+}
+.destacado{
+    color: yellow;
+}
+#subtitulo{
+    color: blue;
+}
+p a{
+    color: red;
+}
+div p a{
+    color:green ;
+}
+a > em{
+    color: blue;
+}
+table caption{
+    color: blue;
+}
+tr > .especial{
+    color: yellow;
+}
+th{
+    color: red;
+}
+td > strong{
+    color: yellow;
+}
+p .especial{
+    color: blueviolet;
+}
+td{
+    color: greenyellow;
+}
+table, th, td{
+    border:1px solid black;
+    border-collapse:collapse;  
+}
+div{
+    color: green;
+}
+div p #especial{
+    color: violet;
+}
+div p a{
+    color: greenyellow;
+}
