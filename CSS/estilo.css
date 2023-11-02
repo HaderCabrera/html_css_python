@@ -1,0 +1,20 @@
+*{
+    color: aqua;
+}
+p{
+color:brown
+}
+.prueba{
+        color:blue
+    }
+#pruebaId{
+    color:black
+}
+main article div p sub{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+u,i{
+    border: 1px solid salmon;
+    
+}
