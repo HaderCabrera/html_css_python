@@ -5,29 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        main {
-            height: 600px;
-            border: 1px solid black;
-            width: 950px;
-            margin: 0 auto;
+        main{
+           background: linear-gradient(gray,10%,white,gray);
+           border: 3px solid red;
+           width: 800px;
+           margin: 0px auto;
+        
         }
         .top{
-            height: 70%;
-            padding: 0px 20px 30px;
+            height: 300px;
+            width: 600px;
+            margin: 0px auto;
+            border: 4px solid greenyellow;
         }
-        img {
+        div[class="top"] > img{
+            width: 100%;
             height: 100%;
-            /* width: 20%; */
         }
+        .down{
+            background: orangered;
+            height: 200px;
+            width: 600px;
+            margin: auto;
+
+        }
+        div[class="down"] > img{
+            width: 15%;
+            height: 40%;
+            margin: 0px calc(300px - 7.5%);
+            border: 3px solid grey;   
+        }
+        h2, p{
+            margin: 0px;
+        }
+
+
     </style>
 </head>
 <body>
     <main>
         <div class="top">
-            <img src="/HTML/img/NINJA.jpg" alt="LOMEJOR">
+            <img src="/hader_cabrera/HTML/img/NINJA.jpg" alt="LOMEJOR">
         </div>
         <div class="down">
-
+            <img src="/hader_cabrera/HTML/img/yz125-4.jpg" alt="REMONTAR">
+            <h2>Noe Zavala</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, minus aspernatur repellendus expedita numquam consequatur alias, ipsa vero dolor error voluptatem qui consectetur reiciendis et, eveniet veritatis praesentium nisi accusantium?</p>
         </div>
     </main>
 </body>
