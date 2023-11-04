@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bordes</title>
+    <style>
+        body{
+            border: 1px solid gray;
+            padding: 40px 10px;
+        }
+        .one, section{
+            padding: 20px;
+            text-align: center;
+            border-width: 10px;
+            border-style:dotted dashed ; 
+            border-color: green yellow red blue ;
+        }
+        .two,.three{
+            margin: 20px 0px;
+            padding: 10px;
+            text-align: center;
+            border-width: 10px;
+            border-style:solid inset ; 
+            border-color:aqua black pink;
+        }
+        .classs{
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="one">
+        Esta es una caja con diferentes tipos de bordes
+    </div>
+    <div class="two">
+        Esta es una caja con diferentes tipos de bordes 
+    </div>
+    <section>
+        <div class="three">
+            Esta es una caja con diferentes tipos de bordes
+        </div>
+    </section>
+    <br>
+    <section class="classs">
+        <section class="classs">
+            <section class="classs">
+                <section class="classs">
+                    <section class="classs">
+                        <section class="classs">
+                            <div class="classs">Esta es una caja con diferentes tipos de bordes</div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    ...
+</body>
+</html>
