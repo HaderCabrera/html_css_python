@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.grip{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1em;
+    grid-auto-rows: minmax(100px, auto);
+    align-items:center;
+    background-color: aquamarine;
+    }
+    .element1{
+        align-self: start;
+    }
+
+.grip > div{
+    border: 1px solid black;
+    background: #ecf0f1;
+    padding: 1em;
+}
