@@ -5,17 +5,24 @@
 .grip{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    /*Espaciado entre elementos*/
     gap: 1em;
+    /* para modificar tamaño vertical de elementos*/
     grid-auto-rows: minmax(100px, auto);
-    align-items:center;
+    /* para modificar verticalmente todos los elementos*/
+    align-items:stretch;
+    /* para modificar horizontalmente todos los elementos*/
+    justify-items: stretch;
     background-color: aquamarine;
     }
     .element1{
-        align-self: start;
+        grid-column: 1/4;
     }
-
+    .element3{
+        grid-column: 1/3;
+    }
 .grip > div{
     border: 1px solid black;
     background: #ecf0f1;
     padding: 1em;
-}
+    }
