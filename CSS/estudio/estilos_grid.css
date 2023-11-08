@@ -16,6 +16,7 @@
     background-color: aquamarine;
     }
     .element1{
+        /*ajustar tamaño de elementos horizontalment        e por lineas de la matriz*/
         grid-column: 1/4;
     }
     .element3{
