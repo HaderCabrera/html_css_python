@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            width: 500px;
+            height: 700px;
+            border: 1px solid black;
+            margin: 10px calc(50% - 250px);
+        }
+        .hijo1{
+            background-color: blue;
+            height: 100px;
+        }
+        .hijo2{
+            position: relative;
+        }
+        .nieto1{
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background-color: aqua;
+        }
+        .nieto2{
+            position: absolute;
+            width: 250px;
+            height: 250px;
+            background-color: grey; 
+            right: 0px;
+        }
+        .hijo3{
+            position: relative;
+            top: 250px;
+        }
+        .nieto3{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgb(63, 62, 61);
+            height: 350px;
+            width: 60%;
+        }
+        .nieto4{
+            position: absolute;
+            background-color: orangered;
+            height: calc(350px / 2);
+            width: 40%;
+            right: 0px;
+        }
+        .nieto5{
+            position: absolute;
+            background-color: red;
+            height: calc(350px / 2);
+            width: 40%;
+            right: 0px;
+            top: calc(350px / 2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hijo1">Seccion 1</div>
+        <div class="hijo2">
+            <div class="nieto1">Seccion 2</div>
+            <div class="nieto2">Seccion 3</div>
+        </div>
+        <div class="hijo3">
+            <div class="nieto3">Seccion4</div>
+            <div class="nieto4">Seccion5</div>
+            <div class="nieto5">Seccion6</div>
+        </div>
+    </div>
+</body>
+</html>

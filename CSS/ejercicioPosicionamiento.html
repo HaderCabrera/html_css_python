@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            border: 1px solid blue;
+            height: 190px;
+            width: 500px;
+            position: relative;
+            margin: 20px calc(50% - 250px);
+        }
+        .hijo1{
+            background-color: gray;
+            width: 150px;
+            height: 150px;
+            position: relative;
+            left: 140px;
+            top: 3px;
+        }
+        .nieto1{
+            background-color: red;
+            border-radius: 40px;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 75px;
+            left: 75px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hijo1">
+            <div class="nieto1"></div>
+        </div>
+
+    </div>
+</body>
+</html>
