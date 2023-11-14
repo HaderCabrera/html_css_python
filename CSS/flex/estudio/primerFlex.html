@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .contenedor{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .header{    
+            background-color: aquamarine;
+            flex: 100%;
+            height: 50px;
+        }
+        .nav1{
+            background-color: bisque;
+            flex: 50%;
+            height: 80px;
+        }
+        .nav2{
+            background-color:chartreuse;
+            flex: 50%;    
+        }
+        .main{
+            display: flex;
+            flex-flow: column wrap;
+            height: 200px;
+
+        }
+        .pruebas1{
+           background-color: blueviolet;
+            width: 70% ;
+            height: 100%;
+        }
+        .pruebas2{
+            background-color: blanchedalmond;
+            width: 30%;
+            height: 50%;
+        }
+        .pruebas3{
+            background-color: rgb(208, 255, 205);
+            width: 30%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <section class="header">Section 1</section>
+        <section class="nav1">Section 2</section>
+        <section class="nav2">Section 3</section>
+    </div>
+    <div class="main">
+        <section class="pruebas1">Section 4</section>
+        <section class="pruebas2">Section 5</section>
+        <section class="pruebas3">Section 6</section>
+    </div>
+
+</body>
+</html>
