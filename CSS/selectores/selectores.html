@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>selectores</title>
+    <style>
+        .classic{
+            border: 3px solid tomato;
+        }
+        .primary{
+            font-size: 5rem;
+        }
+        .large{
+            width: 50%;
+        }
+        button.classic.primary.large{
+            color: limegreen;
+        }
+        /*CAMBIAR CUANDO PULSO EN UN ELEMENTO*/
+        button.classic.large.primary:active{
+            border: 10px dashed red;
+        }
+        button[disabled]{
+            background-color: blue;
+        }
+        [disabled]{
+            margin: 1em;
+        }
+        /*Para buscar por valor de un atributo en especifico*/
+        a[rel="nofollow"]{
+            background-color: aqua;
+        }
+        /*afectar elementos partiendo de un atributo con una palabra que este en la lista de clases de ese atributo*/
+        [data-mood~="happy"]{
+            background-color: blue;
+        }
+        [lan|="es"]{
+            background-color: red;
+            padding: 1em;
+        }
+                /*CAMBIAR CUANDO PASO POR UN ELEMENTO*/
+        [lan|="es"]:hover{
+            background-color: aqua;
+        }
+
+        a[href]::after{
+            content: "URL:["attr(href)"]";
+            display: inline-block;
+            color: blueviolet;
+        }
+        /*atributos iniciados en un valore*/
+        a[href^="http:"]::after{
+            content: "(Pagina no segura):";
+        }
+        /*atributos finalizados en un valore*/
+        a[href$="ff"]::before{
+            content: url(https://www.pngguru.in/storage/uploads/images/PDF%20Icon%20free%20png_1695284057_1717843005.jpg);
+        }
+        /*atributos que contengan un valore*/
+        a[href*="campus"]{
+            border: 5px solid orchid;
+        }
+        /* afectar un imput, RESALTARLO*/
+        input:focus{
+            border: 3px solid red;
+        }
+         /* afectar los imputs  dentro de un formulario cuinando estoy en el, RESALTARLO*/
+        form:focus-within{
+            background-color: yellow;
+        }
+        a[href^="https:"]:link{
+            border: 10px solid blue;
+        }
+        a[href^="http:"]:visited{
+            border: 10px solid violet;
+        }
+    </style>
+</head>
+<body>
+    <button class="classic large primary">Boton</button>
+    <button class="classic large" disabled >Boton</button>
+    <br><br>
+    <a href="http://campus" rel="nofollow" target="_blank">Cmapusland</a>
+    <br><br>
+    <a href="http://goo" data-mood="happy sad">google</a>
+    <br><br>
+    <div lan="es-MEX en-IN">English</div>
+    <br><br>
+    <a href="https://duolin">seguro</a> <br>
+    <a href="http://goo">insegurp</a>
+    <br><br>
+    <a href="http://dsffcamp" download>atributo before</a>
+    <br><br>
+    <form >
+        <label for="nombre">Nombre:</label>
+        <br>
+        <input type="text" name="nombre" id="nombre">
+        <br>
+        <label for="lastname">Apellido:</label>
+        <br>
+        <input type="text" name="lastname" id="lastname">
+    </form>
+
+</body>
+</html>
