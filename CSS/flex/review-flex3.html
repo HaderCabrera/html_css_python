@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0;
+        }
+        .contenedor{
+            display: flex;
+            flex-direction: column;
+        }
+        .contenedor2{
+            display: flex;
+            text-align: center;
+        }
+        .titulo{
+            background-color: burlywood;
+            text-align: center;
+            padding: 2px;
+            height: 24px;
+            font-weight: bolder;
+        }
+        .left{
+            padding: 10px;
+            flex-grow: 1;
+            background-color: darkgray;
+        }
+        .center{
+            padding: 10px;
+            flex-grow: 2;
+        }
+        .right{
+            padding: 10px;
+            flex-grow: 1;
+            background-color: darkgray;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="titulo">Titulo de la página</div>
+        <div class="contenedor2">
+            <div class="left">Lateral izquierdo</div>
+            <div class="center">Zona central</div>
+            <div class="right">Lateral derecho</div>
+        </div>
+    </div>
+</body>
+</html>
