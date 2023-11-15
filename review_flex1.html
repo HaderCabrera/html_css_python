@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .tarjeta{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .card_head{
+            height: 40px;
+            text-align: center;
+            background-color: midnightblue;
+            color: white;
+            padding: 10px 30px;
+        }
+        .card_foot{
+            height: 30px;
+            text-align: center;
+            background-color:darkgray;
+            color: white;
+        }
+        .card_body{
+            flex-basis: auto;
+            line-height: 40px;
+            text-align: center;
+            height: 100%;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid gray;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="tarjeta">
+        <div class="card">
+            <div class="card_head">Tarjeta del cuerpo</div>
+            <div class="card_body">Contenido del cuerpo <br>Contenido del cuerpo <br>Contenido del cuerpo</div>
+            <div class="card_foot">Pie</div>
+        </div>
+        <div class="card">
+            <div class="card_head">Tarjeta del cuerpo</div>
+            <div class="card_body">Contenido del cuerpo </div>
+            <div class="card_foot">Pie</div>
+        </div>
+        <div class="card">
+            <div class="card_head">Tarjeta del cuerpo</div>
+            <div class="card_body">Contenido del cuerpo</div>
+            <div class="card_foot">Pie</div>
+        </div>
+    </div>
+</body>
+</html>
