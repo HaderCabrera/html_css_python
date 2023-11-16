@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .gridContainer{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto auto auto;
+            height: 50vh;
+            gap: 10px;
+        }
+        .itemGrid1{
+            background-color: chocolate;
+            grid-column-start:1 ;
+            grid-column-end: 3;
+        }
+        .itemGrid2{
+            background-color: chocolate;
+        }
+        .itemGrid3{
+            background-color:cadetblue;
+        }
+        .itemGrid4{
+            background-color:cadetblue;
+            grid-column-start:2 ;
+            grid-column-end: 4;
+
+        }
+        .itemGrid5{
+            background-color: blueviolet;
+            grid-column-start:1 ;
+            grid-column-end: 3;
+        }
+        .itemGrid6{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="gridContainer">
+        <div class="itemGrid1"></div>
+        <div class="itemGrid2"></div>
+        <div class="itemGrid3"></div>
+        <div class="itemGrid4"></div>
+        <div class="itemGrid5"></div>
+        <div class="itemGrid6"></div>
+    </div>
+</body>
+</html>

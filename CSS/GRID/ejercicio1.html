@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .gridContainer{
+            display: grid;
+            background-color: aliceblue;
+            border: 1px solid grey;
+            grid-template-columns: repeat(3,1fr);
+            height: 80vh;
+            padding: 5px;
+            gap: 10px;
+        }
+        .itemGrid1{
+            background-color: coral;
+        }
+        .itemGrid2{
+            background-color: cadetblue;
+        }
+        .itemGrid3{
+            background-color: darkmagenta;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="gridContainer">
+        <div class="itemGrid1"></div>
+        <div class="itemGrid2"></div>
+        <div class="itemGrid3"></div>
+    </div>
+</body>
+</html>

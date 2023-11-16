@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+            background-color: #2196f3;
+            padding: 10px;
+            display: grid;
+            grid-template-areas: "Encabezado Encabezado Encabezado" "Menú Menú Menú" " Aside_L Principal Aside_R" "Footer Footer Footer";
+            grid-template-rows: 20% 10% auto 20%;
+            grid-template-columns: 20% auto 20%;
+            /*
+            grid-template-columns: repeat(6,auto);*/
+            width: 80%;
+            height: 100vh;
+            margin: 0 auto;
+            /*
+            /*ESTO NO SIRVE CON FRACCION, ESPACIADO HORIZONTAL
+            justify-content:space-around;
+            /*ESTO NO SIRVE CON FRACCION, ESPACIADO VERTICAL ENTRE ITEMS
+            align-content: center;*/
+            gap: 5px;
+        }
+        .grid-item{
+            background-color: rgb(255,255,255,0.8);
+            border: 1px solid rgba(0,0,0,0.8);
+            padding: 20px;
+            text-align: center;
+        }
+        .item1{
+            grid-area: Encabezado;
+        }
+        .item2{
+            grid-area: Menú;
+        }
+        .item3{
+            grid-area: Principal;
+        }
+        .item4{
+            grid-area: Aside_R;
+        }
+        .item5{
+            grid-area: Footer;
+        }
+        .item6{
+            grid-area: Aside_L;
+        }
+
+
+        /*
+        .item8{
+            /*FILA INICIO/COLUMNA INICIO/FILA FINAL/COLUMNA FINAL
+            grid-area: 1 / 2 / 5 / 6;
+        }
+
+        .item1{
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .item5{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 3;
+        }
+        .item9{
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+        */
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        
+        <div class="grid-item item1">Encabezado</div>
+        <div class="grid-item item2">Menú</div>
+        <div class="grid-item item6">Aside L</div>
+        <div class="grid-item item3">Principal</div>
+        <div class="grid-item item4">Aside R</div>
+        <div class="grid-item item5">Footer</div>
+        <!--<div class="grid-item item6">Item 6</div>
+        <div class="grid-item item7">Item 7</div>
+        <div class="grid-item item8">Item 8</div>
+        <div class="grid-item item9">Item 9</div>
+        <div class="grid-item item10">Item 10</div>
+        <div class="grid-item item11">Item 11</div>
+        <div class="grid-item item12">Item 12</div>
+        <div class="grid-item item13">Item 13</div>
+        <div class="grid-item item14">Item 14</div>
+        <div class="grid-item item15">Item 15</div>-->
+    </div>
+
+</body>
+</html>
