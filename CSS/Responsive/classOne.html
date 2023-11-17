@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendiendo responsive</title>
+    <style>
+        img{
+            width: 40%;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: antiquewhite;
+        }
+        /*Para modificar la pantalla uso SCREEN (ESTO LO HARA MIENTRAS SEA MENOR A 683PX*/
+        @media screen and (max-width:400px) {
+            body{
+                background-color: blue;
+            }
+            h1{
+                text-align: center;
+                text-transform: uppercase;
+            }
+            img{
+                width: 30%;
+            }
+        }
+        @media screen and (min-width:768px) {
+            body{
+                background-color: lightblue;
+            }
+            h1{
+                text-transform: capitalize;
+            }
+            img{
+                width: 80%;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Aprendiendo diseño responsivo</h1>
+    <br><br>
+    <img src="yz125-4.jpg" alt="moto">
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: grid;
+            box-sizing: border-box;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 5px;
+
+        }
+
+        /*PARA MOVIL*/
+        @media screen and (max-width:480px) {
+            div.item1{
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+            div.item2{
+                grid-row: 2 / 3;
+                grid-column: 1 / 2;
+            }
+            div.item3{
+                grid-row: 3 / 4;
+                grid-column: 1 / 2;
+            }
+            div.item4{
+                grid-row: 4 / 5;
+                grid-column: 1 / 2;
+            }
+
+        }
+        @media screen and (min-width:480px) and (max-width:768px) {
+            div.item1{
+                grid-row: 1 / 2;
+                grid-column: 1 / 2;
+            }
+            div.item2{
+                grid-row: 1 / 2;
+                grid-column: 2 / 3;
+            }
+            div.item3{
+                grid-row: 2 / 3;
+                grid-column: 1 / 2;
+            }
+            div.item4{
+                grid-row: 2 / 3;
+                grid-column: 2 / 3;
+            }
+
+        }
+
+        /*PARA MOVIL*/
+        @media screen and (min-width:768px) {
+            div.item1{
+                grid-column: 1 / 2;
+            }
+            div.item2{
+                grid-column: 2 / 3;
+            }
+            div.item3{
+                grid-column: 3 / 4;
+
+            }
+            div.item4{
+                grid-column: 4 / 5;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="item1"><img src="1.png" alt="papanoel1"></div>
+    <div class="item2"><img src="2.png" alt="cerdo"></div>
+    <div class="item3"><img src="3.png" alt="barbarojka"></div>
+    <div class="item4"><img src="4.png" alt="papaArbol"></div>
+</body>
+</html>
