@@ -20,14 +20,16 @@
         }
         .container-global{
             display: grid;
-            grid-template-columns: repeat(12,1fr);
+            grid-template-columns: repeat(12,auto);
             grid-template-rows: repeat(6,auto);
         }
         .encabezado-main{
-            grid-column: 1 / span 12;
+            grid-column: 1 / span 13;
+            grid-row: 1 / 2;
             display: grid;
-            grid-template-columns: auto 85%;
+            grid-template-columns: auto auto;
             grid-template-rows: 40px auto;
+            height: 25%;
         }
         /*DISEÑO DE MAIN*/
         .header-logo{
@@ -36,6 +38,7 @@
             grid-column: 1 / 2;
         }
         .header-marcas{
+            border-radius: 5px;
             height: 40px;
             background-color:#636363;
             grid-row: 1 / 2;
@@ -71,6 +74,7 @@
             padding: 10px;
         }
         /*DISEÑO DE MAIN*/
+        /*DISEÑO PRESENTACION*/
         .presentation{
             background-image: url(estees.jpg);
             grid-column: 1 / 14;
@@ -81,8 +85,62 @@
             font-family: 'Vina Sans', sans-serif;
             font-size: 5rem;
             padding: 30px;
+        }
+        /*DISEÑO PRESENTACION*/
+        /*DISEÑO BUSCADOR*/
+        .container-search{
+            grid-column: 1 / 14;
+            grid-row: 3 / 4;
+            height: 150px;
+            background-image: url(final.jpg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 0;
+        }
+        .search-box{
+            border: 2px solid red;
+            background-color: transparent;
+            width: 80%;
+            max-width: 650px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            height: 60%;
+            position: relative;
+            overflow: hidden;
+            color: black;
+            font-weight:bold;
+        }
+        .search-box input{
+            flex: 1;
+            padding: 15px 10px;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            font-size: 20px;
+        }
+        .search-box button{
+            padding: 10px 12px;
+            border: 0;
+            outline: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+        /*DISEÑO BUSCADOR*/
+        /*DISEÑO TARJETAS*/
+        .motos{
+            grid-column: 1 / 14;
+            grid-row: 4 / 5;
+            background-color: #670000;
+            display: flex;
+        }
+        .clase1{
 
-        }    
+        }
+        /*DISEÑO TARJETAS*/
+
     </style>
 </head>
 <body>
@@ -106,9 +164,11 @@
             </div>
         </header>
         <div class="presentation">HAZ REALIDAD <br> EL SUEÑO DE TU <br> PRIMER MOTO</div>
-        <nav>
-            <div class="presentation-img"></div>
-            <div class="barra-busqueda"></div>
+        <nav class="container-search">
+            <form class="search-box">
+                <input type="text" placeholder="Que deseas buscar?...">
+                <button type="submit"><img src="icono-busqueda.png" alt="icno"></button>
+            </form>
         </nav>
         <section class="motos">
             <div class="clase1"></div>
