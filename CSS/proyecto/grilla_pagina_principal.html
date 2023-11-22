@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <style>
-
         *{
             box-sizing: border-box;
             margin: 0;
@@ -19,6 +19,7 @@
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         .container-global{
+            width: 100vw;
             display: grid;
             grid-template-columns: repeat(12,auto);
             grid-template-rows: repeat(6,auto);
@@ -26,37 +27,37 @@
         .encabezado-main{
             grid-column: 1 / span 13;
             grid-row: 1 / 2;
-            display: grid;
-            grid-template-columns: auto auto;
-            grid-template-rows: 40px auto;
+            display: flex;
             height: 25%;
+            width: 100vw;
+            flex-wrap: wrap;
+            position: relative;
         }
         /*DISEÑO DE MAIN*/
         .header-logo{
             background-color: white;
-            grid-row: 1 / 3;
-            grid-column: 1 / 2;
             padding-left: 30px;
+            width: 25%;
         }
         .header-marcas{
             height: 40px;
             background-color:#636363;
-            grid-row: 1 / 2;
-            grid-column: 2 / 3;
             display: flex;
             justify-content: end;
             align-items: center;
-            gap: 40px;
-            padding-right: 80px ;
+            width: 75%;
+            justify-content: end;
+            gap: 15px;
         }
         .header-menu-main{
-            grid-row: 2 / 3;
-            grid-column: 2 / 3;
             display: flex;
             justify-content: end;
             align-items: center;
-            gap: 100px;
-            padding-right: 40px;
+            gap: 20px;
+            width: 200px;
+            position: absolute;
+            top: 55px;
+            right: -1px;
         }
         .header-menu-main{
             height: 100%;
@@ -76,19 +77,34 @@
         /*DISEÑO DE MAIN*/
         /*DISEÑO PRESENTACION*/
         .presentation{
-            background-image: url(estees.jpg);
             grid-column: 1 / 14;
             grid-row: 2 / 3;
             height: 400px;
-            color: white;
             border-top: 2px solid gray;
             font-family: 'Vina Sans', sans-serif;
             font-size: 5rem;
-            padding: 30px;
+            display: block;
+            position: relative;
+            width: 100vw;
+            
         }
+        .presentation > img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            top: 0;
+        }
+        .presentation > p{
+            font-family: 'Vina Sans', sans-serif;
+            position: absolute;
+            padding-left: 20px;
+            color: #fff;
+        }
+
         /*DISEÑO PRESENTACION*/
         /*DISEÑO BUSCADOR*/
         .container-search{
+            width: 100vw;
             grid-column: 1 / 14;
             grid-row: 3 / 4;
             height: 150px;
@@ -173,11 +189,13 @@
             justify-content: center;
             background-image: url(final.jpg);
             list-style: none;
-            gap: 100px;
+            gap: 80px;
             padding-top: 20px;
             padding-bottom: 20px;
             line-height: 2.5em;
             font-size: 1.5rem;
+            width: 100vw;
+            margin-right: 50px;
         }
         .gestiones a{
             text-decoration: none;
@@ -204,32 +222,160 @@
         }
 
         .gestiones1{
-            width: 30%;
+            width: auto;
             background: black;
-            height: 450px;
+            height: auto;
             border-radius: 10px;
+            max-width: 680px;
         }
         .gestiones2{
-            width: 30%;
+            width: auto;
             background: black;
             border-radius: 10px;
+            max-width: 680px;
         }
     /*DISEÑO DE TARJETAS GESTIONES*/
         /*DISEÑO DE FOOTER*/
         footer{
             grid-column: 1 / 14;
             grid-row: 6 / 7;
+
+            color: black;
+            padding: 0 1.5em;
         }
-        .footer-copy > p{
-            text-align: end;
+        .container-footer{
+            margin-left: 0;
+            margin-right: auto;
+            padding: 1.5em;
+            width: 100vw;
         }
-        .footer-copy{
+        .tittle-footer{
             text-align: center;
-            padding: 30px;
+            font-size: 3em;
+        }
+        span{
+            color: #f73149;
+        }
+        .container-footer2{
+            box-shadow: 0 0 20px 0px rgba(206, 12, 12, 0.8);
+            color: white;
+        }
+        .form-footer{
+            background: linear-gradient(35deg, #222222, black);
+        }
+        .form-footer form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        .form-footer form .block{
+            grid-column: 1 / 3;
+        }
+        .form-footer form button,.form-footer form input,.form-footer form textarea{
+            width: 100%;
+            padding: 0.7em;
+            border: none;
+            background: none;
+            border-bottom:1px solid #f73149 ;
+            outline: 0;
+            color: #fff;
+        }
+        .form-footer form button{
+            background-color: #f73149;
+            border: 0;
+            text-transform: uppercase;
+            padding: 2em;
+            color: #000;
+        }
+        .form-footer form button:hover, .form-footer form button:focus{
+            background-color: #e74a5d;
+            color: #fff;
+        }
+        .info-footer{
+            background-color: #000;
+        }
+        .info-footer h4, .info-footer ul, .info-footer p{
+            text-align: center;
+            margin: 0 0 1rem 0;
+        }
+        .info-footer ul{
+            list-style: none;
         }
         /*DISEÑO DE FOOTER*/
+        /*RESPONSIVE*/
+        @media screen and (min-width:480px) and (max-width:768px){
+            .header-marcas, .header-logo{
+                visibility: hidden;
+            }
+            .header-menu-main{
+                width: 100vw;
+                display: flex;
+                gap: 0;
+                padding: 0;
+                margin: 0; 
+                position: absolute;
+                top: 100%;
+                justify-content: space-evenly;
+            }
+            .gestiones{
+                display: block;
+                width: 100vw;
+            }
+            .gestiones1, .gestiones2{
+                width: 100%;
+                margin: 20px;
+            }
+            .gestiones1{
+                margin-left:20px;
+                margin-right: 20px;
+            }
+        }
+        @media screen and (max-width:480px){
+            .header-marcas, .header-logo{
+                visibility: hidden;
+            }
+            .header-menu-main{
+                width: 100vw;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0;
+                padding: 0;
+                margin: 0; 
+                position: absolute;
+                top: 100%;
+                width: auto;
+                justify-content: space-evenly;
+            }
+            .header-menu-main > div:hover{
+            border: 2px solid black;
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            padding: 2px;
+            }
+            .header-menu-main > div{
+                border: 1px solid black;
+                padding: 5px;
+                border-radius: 5px;
+                box-shadow: 2px 4px #f73149 ;
+            }
 
+            .motos{
+                display: block;
+                height: auto;
+            }
+            .gestiones{
+                display: block;
+                width: 100vw;
+            }
+            .gestiones1, .gestiones2{
+                width: 100vw;
+            }
 
+        }
+
+        /*RESPONSIVE*/
     </style>
 </head>
 <body>
@@ -252,7 +398,9 @@
                 <div class="item-main5">HOME</div>
             </div>
         </header>
-        <div class="presentation">HAZ REALIDAD <br> EL SUEÑO DE TU <br> PRIMER MOTO</div>
+        <div class="presentation"><p> HAZ REALIDAD <br> EL SUEÑO DE TU <br> PRIMER MOTO</p>
+            <img src="estees.jpg" alt="">
+        </div>
         <nav class="container-search">
             <form class="search-box">
                 <input type="text" placeholder="Que deseas buscar?...">
@@ -295,14 +443,47 @@
                 </ul>
             </div>
         </section>
-        <footer>
-            <div class="footer-form">
-                FORMULARIO DE CONTACTO
-            </div>
-            <div class="footer-copy">
-               COPYRIGHT 2023 - TODOS LOS DERECHOS RESERVADOS | JOVIMOTOS S.A <br>
-               CARRERA 6 # 14-12 PIEDECUESTA - SANTANDER
-               <p>Linea de atención: 3054539718 - 3102262278 <br> jubellgmail.com</p>
+        <footer class="container-footer">
+            <h1 class="tittle-footer">Contac<span>TANOS</span></h1>
+            <div class="container-footer2">
+                <div class="form-footer">
+                    <h3>Formulario de contacto</h3>
+                    <form action="">
+                        <p>
+                            <label for="">Fullname</label>
+                            <input type="text" name="fullname">
+                        </p>
+                        <p>
+                            <label for="">eMail Address</label>
+                            <input type="email"  name="email">
+                        </p>
+                        <p>
+                            <label for="">Telefono</label>
+                            <input type="tel" name="telefono">
+                        </p>
+                        <p>
+                            <label for="">Asunto</label>
+                            <input type="text" name="asunto">
+                        </p>
+                        <p class="block">
+                            <label for="">Mensaje</label>
+                            <textarea name="mensaje" rows="3"></textarea>
+                        </p>
+                        <p class="block">
+                            <button type="submit">Enviar</button>
+                        </p>
+                    </form>
+                </div>
+                <div class="info-footer">
+                    <h4>More info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i>Jubel@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>3102262278</li>
+                        <li><i class="fas fa-circle"></i>Carrera 6 # 14-12 Piedecuesta</li>
+                    </ul>
+                    <p>Tenemos una unica sede fisica ubicada en CARRERA 6 # 14-12 PIEDECUESTA, si no estas cerca te recomiendo contactarnos por nuestras redes sociales o comunicandose a las lineas de atencion. A continuación encontraras un formulario si deseas que nos contactemos con usted.</p>
+                    <p>COPYRIGHT 2023 - TODOS LOS DERECHOS RESERVADOS | JOVIMOTOS S.A </p>
+                </div>
             </div>
         </footer>
     </div>
