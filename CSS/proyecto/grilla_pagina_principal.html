@@ -36,9 +36,9 @@
             background-color: white;
             grid-row: 1 / 3;
             grid-column: 1 / 2;
+            padding-left: 30px;
         }
         .header-marcas{
-            border-radius: 5px;
             height: 40px;
             background-color:#636363;
             grid-row: 1 / 2;
@@ -131,13 +131,104 @@
         /*DISEÑO BUSCADOR*/
         /*DISEÑO TARJETAS*/
         .motos{
+            padding: 20px;
             grid-column: 1 / 14;
             grid-row: 4 / 5;
-            background-color: #670000;
             display: flex;
+            width: 100vw;
+            height: 350px;
+            justify-content: space-evenly;
+        }
+        .clase > img{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .clase{
+            position: relative;
+        }
+        .motos p{
+            position: absolute ;
+            top: -10px;
+            justify-content: center;
+            left: calc(50% - 74px);
+            background-color:  #f73149;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bolder;
+        }
+        .clase:hover{
+            border: 1px dotted black;
+            padding: 10px;
+            box-shadow: 20px 40px 30px 1px #b6846b ;
+            border-radius: 5px;
+        }
+        /*DISEÑO TARJETAS*/
+        /*DISEÑO DE TARJETAS GESTIONES*/
+        .gestiones{
+            grid-column: 1 / 14;
+            grid-row: 5 / 6;
+            display: flex;
+            justify-content: center;
+            background-image: url(final.jpg);
+            list-style: none;
+            gap: 100px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            line-height: 2.5em;
+            font-size: 1.5rem;
+        }
+        .gestiones a{
+            text-decoration: none;
+            padding: 5px;
+            color: azure;
+            color:  #cacac8 ;
+        }
+        h3{
+            color: white;
+            text-align: center;
         }
 
-        /*DISEÑO TARJETAS*/
+        .gestiones ul{
+            list-style: none;
+
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .gestiones a:hover{
+            padding: 10px;
+            border:1px solid  #f73149 ;
+            border-radius: 5px;
+            font-size: 2.5rem;
+        }
+
+        .gestiones1{
+            width: 30%;
+            background: black;
+            height: 450px;
+            border-radius: 10px;
+        }
+        .gestiones2{
+            width: 30%;
+            background: black;
+            border-radius: 10px;
+        }
+    /*DISEÑO DE TARJETAS GESTIONES*/
+        /*DISEÑO DE FOOTER*/
+        footer{
+            grid-column: 1 / 14;
+            grid-row: 6 / 7;
+        }
+        .footer-copy > p{
+            text-align: end;
+        }
+        .footer-copy{
+            text-align: center;
+            padding: 30px;
+        }
+        /*DISEÑO DE FOOTER*/
+
 
     </style>
 </head>
@@ -169,15 +260,51 @@
             </form>
         </nav>
         <section class="motos">
-            <div class="clase1"></div>
-            <div class="clase2"></div>
-            <div class="clase3"></div>
+            <div class="clase" id="clase1" >
+                <img src="marca1.jpg" alt="">
+                <p>MOTOS ENDURO</p>
+            </div>
+            <div class="clase" id="clase2" >
+                <img src="marca2.jpg" alt="">
+                <p>MOTOS SPORT</p>
+            </div>
+            <div class="clase" id="clase3" >
+                <img src="marca3.jpg" alt="">
+                <p>MOTOS FAVORITAS</p>
+            </div>
         </section>
         <section class="gestiones">
-            <div class="gestiones1"></div>
-            <div class="gestiones2"></div>
+            <div class="gestiones1">
+                <ul>
+                    <h3>Tramitamos y gestionamos</h3>
+                    <li><a href="#">Traspaso de vehiculos</a></li>
+                    <li><a href="#">Pago de impuestos</a></li>
+                    <li><a href="#">Avaluo de vehiculos</a></li>
+                    <li><a href="#">Duplicado de placas</a></li>
+                    <li><a href="#">Y mas...</a></li>
+                </ul>
+            </div>
+            <div class="gestiones2">
+                <ul>
+                    <h3>Vendemos</h3>
+                    <li><a href="">Formularios de venta</a></li>
+                    <li><a href="#">Carta venta</a></li>
+                    <li><a href="#">Denuncios de perdida</a></li>
+                    <li><a href="#">SOAT / TECNICOMECANICA</a></li>
+                    <li><a href="#">Y mas...</a></li>
+                </ul>
+            </div>
         </section>
-        <footer></footer>
+        <footer>
+            <div class="footer-form">
+                FORMULARIO DE CONTACTO
+            </div>
+            <div class="footer-copy">
+               COPYRIGHT 2023 - TODOS LOS DERECHOS RESERVADOS | JOVIMOTOS S.A <br>
+               CARRERA 6 # 14-12 PIEDECUESTA - SANTANDER
+               <p>Linea de atención: 3054539718 - 3102262278 <br> jubellgmail.com</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
