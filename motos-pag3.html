@@ -80,12 +80,10 @@
             grid-row: 2 / 3;
             width:100% ;
             display: block;
-
         }
         /*DISEÑO CENTER*/
         .center1{
             display: flex;
-            width: 100%;
         }
         .center1-1{
             width: 50%;
@@ -213,30 +211,65 @@
         .info-footer ul{
             list-style: none;
         }
-        @media screen and (max-width:480px){
-            .center1{
-                display: block;
-            }
-            .center1-1, .center1-1{
-                width: 100%;
-                margin: 0 auto;
-            }
-            .center1-2{
-                padding-left: 100px;
-                width: 400px;
-            }
-            .container-footer{
-                width: 100%;
-            }
-        }
         .color-block{
             color: #000;
         }
         .color-block > a:hover{
             color: white;
         }
+        @media screen and (max-width:480px){
 
-
+            .container{
+                display: grid;
+                grid-template-columns: 100vw;
+                grid-template-rows: repeat(6,auto);
+            }
+            .header{
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin-bottom: 10px;
+                width: 100vw;
+            }
+            .item1{
+                background-color: #cacac8;
+            }
+            .item1 a img{
+                border-radius: 10px;
+                box-shadow: 2px 4px black;
+            }
+            .center1-1, .center1-2{
+                width: 100%;
+            }
+            .item2{
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color: #cacac8;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            .item2 > div:hover{
+                border: 2px solid black;
+                background-color: black;
+                border-radius: 5px;
+                color: white;
+                font-size:1.2rem;
+                padding: 10px;
+            }
+            .left{
+                display: none;
+                visibility: hidden;
+            }
+            .center{
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+            .center1{
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
