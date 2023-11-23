@@ -30,10 +30,18 @@
             display: grid;
             grid-template-columns: auto auto;
         }
+        .item1{
+            background-color: #cacac8;
+        }
+        .item1 a img{
+            border-radius: 10px;
+            box-shadow: 2px 4px black;
+        }
         .item2{
             display: flex;
             justify-content: space-evenly;
             align-items: center;
+            background-color: #cacac8;
         }
         .item2 > div:hover{
             border: 2px solid black;
@@ -98,7 +106,7 @@
             font-size: 1.5rem;
         }
         .clase >img:hover{
-            box-shadow: 20px 40px 30px 1px #b6846b ;
+            box-shadow: 20px 40px 30px 1px #b6846b;
             border-radius: 5px;
             width: 110%;
             height: 110%;
@@ -158,10 +166,11 @@
             border: 0;
             text-transform: uppercase;
             padding: 2em;
-            color: #000;
+            color: #000010;
         }
         .form-footer form button:hover, .form-footer form button:focus{
-            background-color: #e74a5d;
+            background-color: #f73149;
+            opacity: 0.6;
             color: #fff;
         }
         .info-footer{
@@ -194,6 +203,19 @@
                 width: auto;
                 position: relative;
             }
+            .item2{
+                font-size: 0.7rem;
+            }
+            .item2 > div:hover{
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            font-size:1rem;
+            padding: 5px;
+            gap: 5px;
+            border-left: 1px solid black;
+        }
+    
         }
         @media screen and (max-width:480px){
             .header-logo, .filtros{
@@ -201,7 +223,6 @@
             }
             .motos{
                 display: block;
-                margin: 0 auto;
                 padding: 0;
             }
             .clase{
@@ -214,6 +235,29 @@
             .tittle-footer{
                 font-size: 1.3rem;
             }
+            .motos p{
+            position: absolute ;
+            top: 10px;
+            left: 0;
+            background-color:  #f73149;
+            padding: 5px;
+            border-radius: 5px;
+            font-weight: bolder;
+            font-size: 1.2rem;
+            }
+            .item2 > div:hover{
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            font-size:0.9rem;
+            padding: 5px;
+            }
+        }
+        .color-block{
+            color: #000;
+        }
+        .color-block > a:hover{
+            color: white;
         }
         /*RESPONSIVE*/
     </style>
@@ -223,12 +267,12 @@
         <header class="header">
             <div class="item1"><a href="grilla_pagina_principal.html"><img src="logo_escalkadi.jpeg" alt="logo-empresa"></a></div>
             <div class="item2">
-                <div class="menu-item1"><a href="motos-pag2.html">MOTOS</a></div>
+                <div class="menu-item1 color-block"><a href="motos-pag2.html">MOTOS</a></div>
                 <div class="menu-item2">CARROS</div>
                 <div class="menu-item3">SERVICIOS</div>
-                <div class="menu-item4"><a href="motos-pag4.html">SOBRE NOSOTROS</a></div>
+                <div class="menu-item4 color-block"><a href="motos-pag4.html">SOBRE NOSOTROS</a></div>
                 <div class="menu-item5">|</div>
-                <div class="item-main5"><a href="grilla_pagina_principal.html">HOME</a></div>
+                <div class="item-main5 color-block"><a href="grilla_pagina_principal.html">HOME</a></div>
             </div>
         </header>
         <div class="filtros">

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;900&family=Grenze+Gotisch:wght@200;300;500;900&family=Roboto:wght@100;400;500;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+            .header{
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+
+        .item1 a img{
+            border-radius: 10px;
+            box-shadow: 2px 4px black;
+        }
+        .item2{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .item2 > div:hover{
+            border: 2px solid black;
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            font-size:1.2rem;
+            padding: 10px;
+        }
+        .container{
+            display: block;
+            margin: 0 auto;
+            width: 90vw;
+        }
+        .imagen1{
+            width: 100%;
+            height: 250px;
+        }
+        .imagen1 > img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .imagen2{
+            width: 100%;
+            height: 250px;
+        }
+        .imagen2 > img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .imagen3{
+            width: 100%;
+            height: 250px;
+        }
+        .imagen3 > img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        footer{
+            color: black;
+            padding: 0 1.5em;
+        }
+        .container-footer{
+            color: #fff;
+            font-size: 1.2rem;
+        }
+  
+        .tittle-footer{
+            text-align: center;
+            font-size: 1.5em;
+            color: #000;
+            max-width: 100%;
+        }
+        span{
+            color: #f73149;
+        }
+
+        .form-footer{
+            background: linear-gradient(35deg, #222222, black);
+        }   
+        .form-footer form{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        .form-footer form .block{
+            grid-column: 1 / 3;
+        }
+        .form-footer form button,.form-footer form input,.form-footer form textarea{
+            width: 100%;
+            padding: 0.7em;
+            border: none;
+            background: none;
+            border-bottom:1px solid #f73149 ;
+            outline: 0;
+            color: #fff;
+        }
+        .form-footer form button{
+            background-color: #f73149;
+            border: 0;
+            text-transform: uppercase;
+            padding: 2em;
+            color: #000;
+        }
+        .form-footer form button:hover, .form-footer form button:focus{
+            background-color: #f73149;
+            opacity: 0.6;
+            color: #fff;
+        }
+        .info-footer{
+            background-color: #ffffff;
+            color: #000;
+        }
+        .info-footer h4, .info-footer ul, .info-footer p{
+            text-align: center;
+            margin: 0 0 1rem 0;
+        }
+        .info-footer ul{
+            list-style: none;
+        }
+        @media screen and (max-width:480px){
+            .item2{
+                flex-wrap: wrap;
+            }
+            .item2 > div:hover{
+                padding: 5px;
+                font-size: 0.9rem;
+            }
+        }
+        p{
+            line-height: 1.8rem;
+            text-align: justify;
+            padding-bottom: 30px;
+            font-size: 1.2rem;
+        }
+        div h1{
+            border-bottom: 3px solid #f73149; 
+            margin: 15px 0px;
+        }
+        @media screen and (min-width:480px) and (max-width:768px){
+            .item2{
+                font-size:0.8rem ;
+            }
+        }
+        .color-block{
+            color: #000;
+        }
+        .color-block > a:hover{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container ">
+        <header class="header">
+            <div class="item1"><a href="grilla_pagina_principal.html"><img src="logo_escalkadi.jpeg" alt="logo-empresa"></a></div>
+            <div class="item2">
+                <div class="menu-item1 color-block"><a href="motos-pag2.html">MOTOS</a></div>
+                <div class="menu-item2">CARROS</div>
+                <div class="menu-item3">SERVICIOS</div>
+                <div class="menu-item4 color-block"><a href="motos-pag4.html">SOBRE NOSOTROS</a></div>
+                <div class="menu-item5">|</div>
+                <div class="item-main5 color-block"><a href="grilla_pagina_principal.html">HOME</a></div>
+            </div>
+        </header>
+        <div class="imagen1"><img src="page4.jpg" alt=""></div>
+        <div><h1>Nuestra historia</h1><p>La empresa nació con un compromiso inquebrantable con la calidad y la atención al cliente. Crearon un ambiente acogedor en su concesionario, donde los clientes no solo podían comprar motos, sino también aprender sobre mantenimiento, participar en eventos de la comunidad motociclista y formar parte de una verdadera familia de amantes de las dos ruedas. <br>
+        Con el tiempo, la reputación de la empresa creció y atrajo a más entusiastas. Organizaron paseos en grupo, patrocinaron eventos locales y se convirtieron en un centro vibrante para la cultura motociclista en la comunidad.</p></div>
+        <div class="imagen2"><img src="page44.jpg" alt=""></div>
+        <div><h1>Mision</h1><p>En nuestra empresa de venta de motos, nos comprometemos a proporcionar a nuestros clientes vehículos de dos ruedas que representen la excelencia en diseño, rendimiento y seguridad. Nos esforzamos por ser más que un concesionario; buscamos ser socios en la aventura de nuestros clientes, brindándoles experiencias de movilidad emocionantes y soluciones personalizadas que se adapten a sus estilos de vida. Nos guía la pasión por la innovación y la calidad, y trabajamos incansablemente para mantenernos a la vanguardia de la industria, ofreciendo productos y servicios que superen las expectativas. Además, estamos comprometidos con la responsabilidad social y ambiental, promoviendo prácticas sostenibles en todas las etapas de nuestro negocio. Nuestra misión es crear conexiones duraderas con nuestros clientes, convirtiéndonos en el destino preferido para aquellos que buscan libertad y emoción sobre dos ruedas.</p></div>
+        <div class="imagen3"><img src="page444.jpg" alt=""></div>
+        <div><h1>Vision</h1><p>Ser reconocidos como líderes en el mercado de venta de motocicletas, ofreciendo a nuestros clientes no solo productos de alta calidad y tecnología avanzada, sino también una experiencia integral que inspire confianza y satisfacción. Buscamos ser la primera opción para los amantes de las motos, proporcionando soluciones de movilidad emocionantes, sostenibles y adaptadas a las necesidades individuales. Nos esforzamos por construir relaciones duraderas con nuestros clientes, basadas en la transparencia, la integridad y el compromiso con la seguridad vial. A medida que evolucionamos, aspiramos a liderar la innovación en la industria, contribuyendo a un futuro más sostenible y emocionante para la movilidad en dos ruedas.</p></div>
+        <footer class="container-footer">
+            <h1 class="tittle-footer">Contac<span>TANOS</span></h1>
+            <div class="container-footer2">
+                <div class="form-footer">
+                    <h3>Formulario de contacto</h3>
+                    <form action="">
+                        <p>
+                            <label for="">Fullname</label>
+                            <input type="text" name="fullname">
+                        </p>
+                        <p>
+                            <label for="">eMail Address</label>
+                            <input type="email"  name="email">
+                        </p>
+                        <p>
+                            <label for="">Telefono</label>
+                            <input type="tel" name="telefono">
+                        </p>
+                        <p>
+                            <label for="">Asunto</label>
+                            <input type="text" name="asunto">
+                        </p>
+                        <p class="block">
+                            <label for="">Mensaje</label>
+                            <textarea name="mensaje" rows="3"></textarea>
+                        </p>
+                        <p class="block">
+                            <button type="submit">Enviar</button>
+                        </p>
+                    </form>
+                </div>
+                <div class="info-footer">
+                    <h4>More info</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i>Jubel@gmail.com</li>
+                        <li><i class="fas fa-phone"></i>3102262278</li>
+                        <li><i class="fas fa-circle"></i>Carrera 6 # 14-12 Piedecuesta</li>
+                    </ul>
+                    <p>Tenemos una unica sede fisica ubicada en CARRERA 6 # 14-12 PIEDECUESTA, si no estas cerca te recomiendo contactarnos por nuestras redes sociales o comunicandose a las lineas de atencion. A continuación encontraras un formulario si deseas que nos contactemos con usted.</p>
+                    <p>COPYRIGHT 2023 - TODOS LOS DERECHOS RESERVADOS | JOVIMOTOS S.A </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

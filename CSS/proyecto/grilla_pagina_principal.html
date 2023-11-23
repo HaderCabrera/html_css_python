@@ -42,7 +42,7 @@
         }
         .header-marcas{
             height: 40px;
-            background-color:#636363;
+            background-color:#cacac8;
             display: flex;
             justify-content: end;
             align-items: center;
@@ -116,7 +116,7 @@
             padding: 5px 0;
         }
         .search-box{
-            border: 2px solid red;
+            border: 2px solid #f73149;
             background-color: transparent;
             width: 80%;
             max-width: 650px;
@@ -289,7 +289,8 @@
             color: #000;
         }
         .form-footer form button:hover, .form-footer form button:focus{
-            background-color: #e74a5d;
+            background-color: #f73149;
+            opacity: 0.6;
             color: #fff;
         }
         .info-footer{
@@ -317,6 +318,7 @@
                 position: absolute;
                 top: 100%;
                 justify-content: space-evenly;
+                font-size: 0.8rem;
             }
             .gestiones{
                 display: block;
@@ -395,9 +397,19 @@
             z-index: 10;
         }
 
-.whatsapp-ico:hover{
-    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
-}
+        .whatsapp-ico:hover{
+            box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
+        }
+        .color-block{
+            color: #000;
+        }
+        .color-block > a:hover{
+            color: white;
+        }
+        .presentation span{
+            color: #b6846b;
+            font-family: 'Vina Sans', sans-serif;
+        }
     </style>
 </head>
 <body>
@@ -415,14 +427,14 @@
                 <div class="marca6"><img src="yamaha_wing.png" alt="ymaha"></div>                
             </div>
             <div class="header-menu-main">
-                <div class="item-main1"><a href="motos-pag2.html">Motos</a></div>
+                <div class="item-main1 color-block"><a href="motos-pag2.html">Motos</a></div>
                 <div class="item-main2">Carros</div>
                 <div class="item-main3">Servicios</div>
-                <div class="menu-item4"><a href="motos-pag4.html">SOBRE NOSOTROS</a></div>
-                <div class="item-main5"><a href="grilla_pagina_principal.html">HOME</a></div>
+                <div class="menu-item4 color-block"><a href="motos-pag4.html">SOBRE NOSOTROS</a></div>
+                <div class="item-main5 color-block"><a href="grilla_pagina_principal.html">HOME</a></div>
             </div>
         </header>
-        <div class="presentation"><p> HAZ REALIDAD <br> EL SUEÑO DE TU <br> PRIMER MOTO</p>
+        <div class="presentation"><p> HAZ REALIDAD <br> EL SUEÑO DE TU <br> <span>PRIMERA MOTO</span></p>
             <img src="estees.jpg" alt="">
         </div>
         <nav class="container-search">
