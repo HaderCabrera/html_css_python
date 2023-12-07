@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESTAMOS</title>
+</head>
+<body>
+    <table border = 1 id="tabla">
+        <tr>
+            <th>Mes</th>
+            <th>Valor</th>
+            <th>Valor total</th>
+            <th>Capital</th>
+            <th>Intereses</th>
+            <th>Total</th>
+        </tr>
+
+
+    </table>
+    <table border = 1 id="tabla2">
+
+    </table>
+    <script>
+        //LLENAR HISTORICO DEL PRESTAMO
+        const calFactura = function(prestar,intereses,cantCuotas) {
+            let maPrestamo = new Map();
+            let valor = 0, valorTotal = 0, capMensual = 0, intMensual = 0, total = 0;
+
+            //NO CAMBIAN
+            let valorIntereses = prestar * (intereses / 100 );
+            capMensual = prestar / cantCuotas;
+            intMensual = valorIntereses / cantCuotas;
+            total = capMensual + intMensual;
+            
+            for (let i = 1; i < cantCuotas + 1; i++) {
+                let cadMes = [];
+                valor = prestar ;
+                valorTotal = valor * (1 + (intereses / 100));
+                cadMes.push(valor,valorTotal,capMensual,intMensual,total)
+                //METER VALORES DE CADA MES
+                maPrestamo.set(i, cadMes);
+                //RECALCULAR DEUDA ACTUAL
+                prestar = valor - capMensual;
+            }
+            return maPrestamo
+        }
+
+        //HTML TABLA DE HISTORICO DE PAGOS
+        function actualizarListaFacturas(mapMensual,valorInteresess,valorTotall,monto) {
+            const listaMensual = document.getElementById('tabla');
+            let listaHTML = '';
+            mapMensual.forEach((valor, codigo) => {
+                console.log(codigo)
+                listaHTML += ` <tr><th>${codigo}</th><th>${valor[0]}</th><th>${valor[1]}</th><th>${valor[2]}</th><th>${valor[3]}</th><th>${valor[4]}</th></tr>`
+                console.log(listaHTML)
+            });
+            listaHTML += ` <tr><th></th><th></th><th>Total:</th><th>${monto}</th><th>${valorInteresess}</th><th>${valorTotall}</th></tr>`
+            listaMensual.innerHTML += listaHTML;
+        }
+
+        function tablaGeneral(intereses,valorTotall,cantCuotas,valorTotall,valorMensual) {
+            const listaTwo = document.getElementById('tabla2');
+            let valoresGenerales = '';
+            valoresGenerales += `<tr><th>Monto del credito</th><th>$${monto}</th></tr><tr><th>Tasa de interes (anual)</th><th>${intereses}%</th></tr><tr><th>Numero de pagos (mensuales)</th><th>$${cantCuotas}</th></tr><tr><th>Valor total</th><th>$${valorTotall} COPS</th></tr><tr><th>Valor mensual</th><th>$${valorMensual} COPS</th></tr> `
+            listaTwo.innerHTML += valoresGenerales;
+        }
+
+        //MAIN
+        let monto, intereses, cantCuotas;
+        monto = Number(prompt("Ingrese el monto que desea financiar:  "))
+        intereses = Number(prompt("Ingrese el valor en pocentaje de los intereses anuales:  "))
+        cantCuotas = Number(prompt("A cuantas cuotas quiere financiar ese monto:  "))
+        let imprimir = calFactura(monto,intereses,cantCuotas)
+
+        //DATOS PRIMERA TABLA (DATOS GENERALES)
+        let valorInteresess = monto * (intereses / 100 );
+        let valorTotall = monto + valorInteresess;
+        let valorMensual = valorTotall / cantCuotas;
+
+        console.log(imprimir)
+        actualizarListaFacturas(imprimir,valorInteresess,valorTotall,monto);
+        tablaGeneral(intereses,valorTotall,cantCuotas,valorTotall,valorMensual);
+
+    </script>
+</body>
+</html>
